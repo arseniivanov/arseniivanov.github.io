@@ -2862,7 +2862,7 @@ void main() {
       varying vec3 vColor;
       ${s.vertexShader}
     `.replace("gl_PointSize = size;","gl_PointSize = size * sizes;").replace("#include <color_vertex>",`#include <color_vertex>
-        float d = abs(position.y) / 230.0;
+        float d = abs(position.y) / 30.0;
         d = pow(d, 0.5);
         d = clamp(d, 0., 1.);
         vColor = mix(vec3(227., 155., 0.), vec3(100., 50., 255.), d) / 255.;
