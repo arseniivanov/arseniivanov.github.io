@@ -10,6 +10,7 @@
     "vite": "^2.3.0"
   },
   "dependencies": {
+    "delaunator": "^5.0.0",
     "three": "^0.128.0"
   }
 }
