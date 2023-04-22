@@ -1,5 +1,5 @@
 import './style.css';
-import * as THREE from 'three';
+import { Vector3, Clock, Scene, PerspectiveCamera, WebGLRenderer, PointLight, AmbientLight, BufferGeometry, Float32BufferAttribute, PointsMaterial, AdditiveBlending, Color, Points, AnimationMixer, MathUtils} from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
@@ -10,12 +10,12 @@ let composer, walkmixer, clock;
 
 const ENTIRE_SCENE = 0;
 
-clock = new THREE.Clock();
+clock = new Clock();
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 100);
+const scene = new Scene();  
+const camera = new PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 100);
 
-const renderer = new THREE.WebGLRenderer({
+const renderer = new WebGLRenderer({
   canvas: document.querySelector('#bg'),
   antialias: false
 });
@@ -28,11 +28,11 @@ camera.position.setX(-3);
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff);
+const pointLight = new PointLight(0xffffff);
 pointLight.position.set(5, 5, 5);
 pointLight.layers.enable(ENTIRE_SCENE);
 
-const ambientLight = new THREE.AmbientLight(0xffffff);
+const ambientLight = new AmbientLight(0xffffff);
 ambientLight.layers.enable(ENTIRE_SCENE);
 scene.add(pointLight, ambientLight);
 
@@ -55,22 +55,22 @@ let pts = new Array(10000).fill().map(p => {
   sizes.push(Math.random() * 1.5 + 0.5);
   pushShift();
   var sz = { x: 230, y: 230 };
-  let x = THREE.MathUtils.randFloatSpread(sz.x);
-  let y = THREE.MathUtils.randFloatSpread(sz.y);
+  let x = MathUtils.randFloatSpread(sz.x);
+  let y = MathUtils.randFloatSpread(sz.y);
   let z = -30;
-  return new THREE.Vector3(x,y,z);
+  return new Vector3(x,y,z);
 })
 
-scene.background = new THREE.Color(0x160016);
+scene.background = new Color(0x160016);
 
-let g = new THREE.BufferGeometry().setFromPoints(pts);
-g.setAttribute("sizes", new THREE.Float32BufferAttribute(sizes, 1));
-g.setAttribute("shift", new THREE.Float32BufferAttribute(shift, 4));
-let m = new THREE.PointsMaterial({
+let g = new BufferGeometry().setFromPoints(pts);
+g.setAttribute("sizes", new Float32BufferAttribute(sizes, 1));
+g.setAttribute("shift", new Float32BufferAttribute(shift, 4));
+let m = new PointsMaterial({
   size: 0.5,
   transparent: true,
   depthTest: true,
-  blending: THREE.AdditiveBlending,
+  blending: AdditiveBlending,
   onBeforeCompile: shader => {
     shader.uniforms.time = gu.time;
     shader.vertexShader = `
@@ -115,7 +115,7 @@ let m = new THREE.PointsMaterial({
     );
   }
 });
-let cloud = new THREE.Points(g, m);
+let cloud = new Points(g, m);
 cloud.rotation.order = "ZYX";
 cloud.rotation.z = 0.0;
 scene.add(cloud);
@@ -129,7 +129,7 @@ modelloader.load( 'models/walkingman.glb', function ( gltf ) {
   model.position.x = 1;
   model.position.y = -2;
   scene.add( model );
-  walkmixer = new THREE.AnimationMixer( model );
+  walkmixer = new AnimationMixer( model );
   const torusclip = gltf.animations[ 0 ];
   const walkclip = gltf.animations[ 1 ];
   walkmixer.clipAction( torusclip.optimize() ).play();
