@@ -3,8 +3,6 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import Delaunator from 'delaunator';
-import { randFloatSpread } from 'three/src/math/MathUtils';
 
 // Setup
 
@@ -16,15 +14,6 @@ clock = new THREE.Clock();
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 100);
-
-const size = 10;
-const divisions = 10;
-const teal = new THREE.Color("rgb(0, 255, 204))");
-const gridHelper = new THREE.GridHelper( size, divisions, teal, teal);
-gridHelper.translateY(-3);
-gridHelper.color;
-//scene.add(gridHelper);
-
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
@@ -131,90 +120,6 @@ cloud.rotation.order = "ZYX";
 cloud.rotation.z = 0.0;
 scene.add(cloud);
 
-/*
-let campos = camera.getWorldPosition();
-
-var sz = { x: 200, z: 200 };
-var pointsCount = 1000;
-var points3d = [];
-var billboardpoints = [];
-for (let i = 0; i < pointsCount; i++) {
-  let x = THREE.MathUtils.randFloatSpread(sz.x);
-  let z = THREE.MathUtils.randFloatSpread(sz.z);
-  let y = 10;
-  let dotpos = new THREE.Vector3(x, y, z);  
-  points3d.push(dotpos);
-  const direction = new THREE.Vector3().subVectors(dotpos, campos).normalize();
-  const distance = Math.random() * 70;
-  let temp_pos = new THREE.Vector3(x, y, z);
-  temp_pos.add(direction.multiplyScalar(distance));
-  billboardpoints.push(temp_pos);
-}
-
-
-const sprite = new THREE.TextureLoader().load( 'disc.png' );
-
-var geom = new THREE.BufferGeometry().setFromPoints(billboardpoints);
-var geom_mesh = new THREE.BufferGeometry().setFromPoints(points3d);
-var material = new THREE.PointsMaterial( { size: 1, sizeAttenuation: true, map: sprite, alphaTest: 0.5, transparent: true } );
-
-var cloud = new THREE.Points(
-  geom,
-  material
-);
-
-//cloud.rotation.x = -Math.PI / 2; 
-
-scene.add(cloud);
-*/
-// triangulate x, z
-var indexDelaunay = Delaunator.from(
-  pts.map(v => {
-    return [v.x, v.y];
-  })
-);
-
-var meshIndex = []; // delaunay index => three.js index
-for (let i = 0; i < indexDelaunay.triangles.length; i++){
-  meshIndex.push(indexDelaunay.triangles[i]);
-}
-console.log(meshIndex.length)
-
-var colors = [];
-for (let i = 0; i < meshIndex.length; i+=3) {
-  let avgy = (meshIndex[i].y + meshIndex[i+1].y + meshIndex[i+2].y)/3;
-  let color = new THREE.Color(avgy);
-  colors[meshIndex[i]] = color;
-  colors[meshIndex[i+1]] = color;
-  colors[meshIndex[i+2]] = color;
-}
-console.log(colors.length)
-
-g.setIndex(meshIndex); // add three.js index to the existing geometry
-g.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3)); // set vertex colors
-g.computeVertexNormals();
-
-const myShaderMaterial = new THREE.ShaderMaterial({
-  uniforms: {
-    time: gu.time,
-    color1: { value: new THREE.Color(0xec5800) },
-    color2: { value: new THREE.Color(0xffbf00) },
-  },
-
-  vertexShader: document.getElementById("vertexShader").textContent,
-	fragmentShader: document.getElementById("fragmentShader").textContent,
-  wireframe: false,
-  vertexColors: true // enable vertex colors
-});
-
-var mesh = new THREE.Mesh(
-  g,
-  myShaderMaterial
-);
-mesh.material.side = THREE.DoubleSide;
-//scene.add(mesh);
-
-
 let modelloader = new GLTFLoader();
 
 modelloader.load( 'models/walkingman.glb', function ( gltf ) {
@@ -240,8 +145,6 @@ composer.addPass( renderScene );
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
   camera.position.z = t * -0.01;
-  //camera.position.x = t * -0.0002;
-  //camera.rotation.y = t * -0.0002;
 }
 
 document.body.onscroll = moveCamera;
@@ -249,14 +152,12 @@ moveCamera();
 
 // Animation Loop
 function animate() {
-  console.log(myShaderMaterial.time)
   requestAnimationFrame(animate);
   renderer.autoClear = false;
   renderer.clear();
   const delta = clock.getDelta();
   let t = clock.getElapsedTime();
   gu.time.value = t * Math.PI;
-  //cloud.rotation.y = t * 0.05;
   walkmixer.update(delta);
 	composer.render();
 }

@@ -53,10 +53,6 @@ let timeStart = performance.now();
 
 draw();
 
-function easeOutQuadratic(t) {
-  return -1 * t * (t - 2);
-}
-
 function draw(){
   let t = (performance.now() - timeStart) * 0.001;
   
