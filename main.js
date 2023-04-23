@@ -1,6 +1,5 @@
 import './style.css';
 import { Vector3, Clock, Scene, PerspectiveCamera, WebGLRenderer, PointLight, AmbientLight, BufferGeometry, Float32BufferAttribute, PointsMaterial, AdditiveBlending, Color, Points, AnimationMixer, MathUtils} from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 
@@ -120,21 +119,27 @@ cloud.rotation.order = "ZYX";
 cloud.rotation.z = 0.0;
 scene.add(cloud);
 
-let modelloader = new GLTFLoader();
-
-modelloader.load( 'models/walkingman.glb', function ( gltf ) {
-
-  const model = gltf.scene;
-  model.position.z = 0;
-  model.position.x = 1;
-  model.position.y = -2;
-  scene.add( model );
-  walkmixer = new AnimationMixer( model );
-  const torusclip = gltf.animations[ 0 ];
-  const walkclip = gltf.animations[ 1 ];
-  walkmixer.clipAction( torusclip.optimize() ).play();
-  walkmixer.clipAction( walkclip.optimize() ).play();
+async function loadGLTFLoader() {
+  const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
+  let modelloader = new GLTFLoader();
+  const baseUrl = import.meta.env.BASE_URL;
+  const modelPath = `${baseUrl}models/walkingman.glb`;
+  console.log(modelPath)
+  modelloader.load(modelPath, function ( gltf ) {
+    const model = gltf.scene;
+    model.position.z = 0;
+    model.position.x = 1;
+    model.position.y = -2;
+    scene.add( model );
+    walkmixer = new AnimationMixer( model );
+    let torusclip = gltf.animations[ 0 ];
+    let walkclip = gltf.animations[ 1 ];
+    walkmixer.clipAction( torusclip.optimize() ).play();
+    walkmixer.clipAction( walkclip.optimize() ).play();
 } );
+}
+
+loadGLTFLoader();
 
 const renderScene = new RenderPass( scene, camera );
 composer = new EffectComposer( renderer );
@@ -158,7 +163,9 @@ function animate() {
   const delta = clock.getDelta();
   let t = clock.getElapsedTime();
   gu.time.value = t * Math.PI;
-  walkmixer.update(delta);
+  if (walkmixer) {
+    walkmixer.update(delta);
+  }
 	composer.render();
 }
 

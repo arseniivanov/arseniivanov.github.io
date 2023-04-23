@@ -1,4 +1,4 @@
-import {Color, MathUtils, Vector2} from "https://cdn.skypack.dev/three@0.149.0";
+import {Color, MathUtils, Vector2} from "three";
 import Delaunator from "https://cdn.skypack.dev/delaunator@5.0.0";
 
 const cnv = document.getElementById('cnv');
@@ -28,7 +28,7 @@ function refill(){
       v.move = {
         r: Math.random() * 1 + 40,
         phase: Math.random() * Math.PI * 2,
-        speedRatioX: (Math.random() * 0.5 + 0.5) * (Math.random() < 0.5 ? -1 : 1),
+        speedRatioX: (Math.random() * 2.0 + 0.5) * (Math.random() < 0.5 ? -1 : 1),
         speedRatioY: (Math.random() * 0.5 + 0.5) * (Math.random() < 0.5 ? -1 : 1),
         pRmin: 2,
         pRdif: 5
