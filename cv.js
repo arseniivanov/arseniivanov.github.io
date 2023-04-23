@@ -1,3 +1,4 @@
+import './cv-styles.css';
 import {Color, MathUtils, Vector2} from "three";
 import Delaunator from "https://cdn.skypack.dev/delaunator@5.0.0";
 
