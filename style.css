@@ -1,11 +1,8 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 @import "https://fonts.googleapis.com/css2?family=Megrim&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Orbitron&display=swap";
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+
 
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
@@ -53,7 +50,6 @@ header {
 section {
   grid-column: 2 / 8;
   padding: 1rem;
-  background: var(--dark-bg);
   font-size: 1.25rem;
   line-height: 1.5;
   margin-bottom: var(--spacing);
@@ -81,14 +77,29 @@ blockquote p {
 
 /* Add the new style for the #word element */
 #word{
-  font-family: Megrim, cursive;
-  font-size: 10;
+  font-family: Megrim;
   position: relative;
-  margin: 10;
   /*bottom: 0;*/
-  color: #fc0;
+  color: #cf0f;
   -webkit-text-stroke: 0.15vh #c0f;
+  transition: all 0.5s ease;
 }
+
+#word:hover {
+  color: #FFFFFF; /* Change text color slightly on hover */
+  text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF; /* Stronger glow on hover */
+}
+
+#futuristic-text {
+  font-family: 'Orbitron', sans-serif; /* Replace with your chosen font */
+  color: #ffe0ff; /* Light purple text */
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  transition: all 0.5s ease;
+}
+
+
+
 
 #work-history-link {
   text-decoration: none;
@@ -126,7 +137,7 @@ blockquote p {
 }
 
 .project-link {
-  color: #fc0; /* Yellow */
+  color: rgb(199, 219, 86);; /* Yellow */
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -145,4 +156,80 @@ blockquote p {
 .linkedin-icon img {
   width: 60px;
   height: 60px;
+}
+
+@keyframes glitch1 {
+  0%, 100% {
+      clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: skew(0.5deg, -0.5deg);
+  }
+  20%, 40%, 60%, 80% {
+      clip: rect(85px, 9999px, 14px, 0);
+      transform: skew(-0.5deg, 0.5deg);
+  }
+  30%, 50%, 70% {
+      clip: rect(33px, 9999px, 30px, 0);
+      transform: skew(0.5deg, -0.5deg);
+  }
+  90% {
+      clip: rect(70px, 9999px, 20px, 0);
+      transform: skew(-0.5deg, 0.5deg);
+  }
+}
+
+@keyframes glitch2 {
+  0%, 100% {
+      clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+      clip: rect(0, 9999px, 0, 0);
+      transform: skew(-0.5deg, 0.5deg);
+  }
+  20%, 40%, 60%, 80% {
+      clip: rect(15px, 9999px, 85px, 0);
+      transform: skew(0.5deg, -0.5deg);
+  }
+  30%, 50%, 70% {
+      clip: rect(50px, 9999px, 33px, 0);
+      transform: skew(-0.5deg, 0.5deg);
+  }
+  90% {
+      clip: rect(20px, 9999px, 70px, 0);
+      transform: skew(0.5deg, -0.5deg);
+  }
+}
+
+.glitch-text {
+  position: relative;
+  color: rgb(199, 219, 86);
+  background-color: transparent;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+}
+
+.glitch-text::before {
+  animation: glitch1 3s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  left: 2px;
+  text-shadow: -1px 0 red;
+}
+
+.glitch-text::after {
+  animation: glitch2 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  left: -2px;
+  text-shadow: 1px 0 blue;
 }

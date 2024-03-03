@@ -1,7 +1,8 @@
 import './style.css';
-import { Vector3, Clock, Scene, PerspectiveCamera, WebGLRenderer, PointLight, AmbientLight, BufferGeometry, Float32BufferAttribute, PointsMaterial, AdditiveBlending, Color, Points, AnimationMixer, MathUtils} from 'three';
+import { Vector3, Clock, Scene, PerspectiveCamera, WebGLRenderer, PointLight, AmbientLight, BufferGeometry, Float32BufferAttribute, PointsMaterial, AdditiveBlending, Color, Points} from 'three';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 
 // Setup
 
@@ -23,7 +24,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 camera.position.setZ(30);
-camera.position.setX(-3);
+camera.position.setX(0);
 
 // Lights
 
@@ -41,41 +42,36 @@ let gu = {
 }
 
 let sizes = [];
-let shift = [];
-let pushShift = () => {
-  shift.push(
-    Math.random() * Math.PI, 
-    Math.random() * Math.PI * 2, 
-    (Math.random() * 0.9 + 0.1) * Math.PI * 0.1,
-    Math.random() * 0.9 + 0.1
-  );
-}
-let pts = new Array(10000).fill().map(p => {
-  sizes.push(Math.random() * 1.5 + 0.5);
-  pushShift();
-  var sz = { x: 230, y: 230 };
-  let x = MathUtils.randFloatSpread(sz.x);
-  let y = MathUtils.randFloatSpread(sz.y);
-  let z = -30;
-  return new Vector3(x,y,z);
-})
+let radii = [10, 10, 10, 15, 15, 20];
+
+let pts = new Array(300).fill().map(() => {
+  sizes.push(Math.random() * 1.5 + 0.5); // Assuming you have initialized 'sizes' array somewhere else
+  const radius = radii[Math.floor(Math.random() * radii.length)]; // Randomly select one of the three radii
+  const angle = Math.random() * 2 * Math.PI; // Random angle in radians
+
+  let x = radius * Math.cos(angle); // Convert polar to Cartesian coordinates
+  let y = radius * Math.sin(angle); // Convert polar to Cartesian coordinates
+  let z = -30; // Set z to -30 as per your requirement
+
+  return new Vector3(x, y, z);
+});
 
 scene.background = new Color(0x160016);
 
 let g = new BufferGeometry().setFromPoints(pts);
-g.setAttribute("sizes", new Float32BufferAttribute(sizes, 1));
-g.setAttribute("shift", new Float32BufferAttribute(shift, 4));
+g.setAttribute('sizes', new Float32BufferAttribute(sizes, 1));
+// Removed the 'shift' attribute as you no longer need it
+
 let m = new PointsMaterial({
   size: 0.5,
   transparent: true,
   depthTest: true,
   blending: AdditiveBlending,
   onBeforeCompile: shader => {
-    shader.uniforms.time = gu.time;
+    shader.uniforms.time = gu.time; // Ensure time uniform is properly defined if needed
     shader.vertexShader = `
       uniform float time;
       attribute float sizes;
-      attribute vec4 shift;
       varying vec3 vColor;
       ${shader.vertexShader}
     `.replace(
@@ -92,64 +88,143 @@ let m = new PointsMaterial({
     ).replace(
       `#include <begin_vertex>`,
       `#include <begin_vertex>
-        float t = time;
-        float moveT = mod(shift.x + shift.z * t, PI2);
-        float moveS = mod(shift.y + shift.z * t, PI2);
-        transformed += vec3(cos(moveS) * sin(moveT), cos(moveT), sin(moveS) * sin(moveT)) * shift.w;
-        transformed += normalize(transformed - cameraPosition) * -0.5;
+       float angle = atan(position.y, position.x) - time * 0.1; // Adjust time * 0.1 to change speed
+       float radius = length(position.xy); // Assuming your points are initially placed on a circle
+       transformed.x = cos(angle) * radius;
+       transformed.y = sin(angle) * radius;
       `
     );
+    // Removed the part related to 'shift' attribute in vertex shader
+
     shader.fragmentShader = `
       varying vec3 vColor;
       ${shader.fragmentShader}
     `.replace(
       `#include <clipping_planes_fragment>`,
       `#include <clipping_planes_fragment>
-        float d = length(gl_PointCoord.xy - 0.5);
-        //if (d > 0.5) discard;
+        float d = length(gl_PointCoord - vec2(0.5, 0.5));
+        d = smoothstep(0.5, 0.1, d);
       `
     ).replace(
       `vec4 diffuseColor = vec4( diffuse, opacity );`,
-      `vec4 diffuseColor = vec4( vColor, smoothstep(0.5, 0.1, d)/* * 0.5 + 0.5*/ );`
+      `vec4 diffuseColor = vec4( vColor, d );` // Updated to use 'd' for alpha to create a fade effect on the edges of the points
     );
   }
 });
+
 let cloud = new Points(g, m);
 cloud.rotation.order = "ZYX";
 cloud.rotation.z = 0.0;
 scene.add(cloud);
 
-async function loadGLTFLoader() {
-  const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
-  let modelloader = new GLTFLoader();
-  const baseUrl = import.meta.env.BASE_URL;
-  const modelPath = `${baseUrl}models/walkingman.glb`;
-  console.log(modelPath)
-  modelloader.load(modelPath, function ( gltf ) {
-    const model = gltf.scene;
-    model.position.z = 0;
-    model.position.x = 1;
-    model.position.y = -2;
-    scene.add( model );
-    walkmixer = new AnimationMixer( model );
-    let torusclip = gltf.animations[ 0 ];
-    let walkclip = gltf.animations[ 1 ];
-    walkmixer.clipAction( torusclip.optimize() ).play();
-    walkmixer.clipAction( walkclip.optimize() ).play();
-} );
-}
-
-loadGLTFLoader();
-
 const renderScene = new RenderPass( scene, camera );
 composer = new EffectComposer( renderer );
 composer.addPass( renderScene );
+
+
+
+const wavyTVShader = {
+  uniforms: {
+      "tDiffuse": { value: null },
+      "time": { value: 0 },
+      "lineThickness": { value: 1.0 } // Adjust thickness of horizontal lines
+  },
+  vertexShader: `
+      varying vec2 vUv;
+      void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+  `,
+  fragmentShader: `
+  uniform sampler2D tDiffuse;
+  uniform float time;
+  uniform float lineThickness;
+  varying vec2 vUv;
+
+  void main() {
+      vec2 uv = vUv;
+      // Oscillating effect only for the lines
+      float linePos = mod(uv.y * 800.0 + time * 9.0, 8.0); // Move lines up and down
+      vec4 color = texture2D(tDiffuse, uv);
+
+      // Creating thin black horizontal lines that oscillate
+      if (linePos < lineThickness) color.rgb *= 0.0;
+
+      gl_FragColor = color;
+  }
+  `
+};
+
+const wavyTVPass = new ShaderPass(wavyTVShader);
+composer.addPass(wavyTVPass);
+
+
+const circularGradientShader = {
+  uniforms: {
+      "tDiffuse": { value: null },
+      "time": { value: 0 },
+      "lineThickness": { value: 0.02 }, // Adjust thickness of horizontal lines
+  },
+  vertexShader: `
+      varying vec2 vUv;
+      void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+  `,
+  fragmentShader: `
+      uniform sampler2D tDiffuse;
+      uniform float time;
+      uniform float lineThickness;
+      varying vec2 vUv;
+
+      void main() {
+          vec2 uv = vUv;
+          float linePos = mod(uv.y * 800.0 + time * 50.0, 10.0); // Move lines up and down
+          vec4 color = texture2D(tDiffuse, uv);
+
+          // Creating thin black horizontal lines that oscillate
+          if (linePos < lineThickness) color.rgb *= 0.0;
+
+          // Adjusting for circular gradient movement
+          vec2 center1 = vec2(0.5 + sin(time * 0.2) * 0.2, 0.5 + cos(time * 0.3) * 0.2);
+          vec2 center2 = vec2(0.5 - sin(time * 0.3) * 0.2, 0.5 - cos(time * 0.2) * 0.2);
+
+          // Clouds gradient calculations
+          float dist1 = length(uv - center1);
+          float dist2 = length(uv - center2);
+
+          // Create gradients for each cloud based on distance to its center
+          float cloud1 = 1.0 - smoothstep(0.0, 0.5, dist1);
+          float cloud2 = 1.0 - smoothstep(0.0, 0.7, dist2);
+
+          float cloudEffect = smoothstep(0.0, 0.7, dist1) * smoothstep(0.0, 0.5, dist2);
+
+          // Darker purple and orange colors
+          vec3 colorOne = vec3(120, 50, 255) / 255.0; // Darker purple
+          vec3 colorTwo = vec3(0.58, 0.03, 0.30); // Darker orange
+
+          // Create the smooth color gradient between two clouds
+          vec3 gradientColor = mix(colorOne * cloud1, colorTwo * cloud2, 0.5);
+
+          // Apply the clouds gradient over the original color
+          color.rgb = mix(color.rgb, gradientColor, 0.5); // Adjust the blending as needed
+      
+          gl_FragColor = color;
+      }
+  `
+};
+
+const gradientOscillatingPass = new ShaderPass(circularGradientShader);
+composer.addPass(gradientOscillatingPass);
+
+
 
 // Scroll Animation
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-  camera.position.z = t * -0.01;
 }
 
 document.body.onscroll = moveCamera;
@@ -160,12 +235,10 @@ function animate() {
   requestAnimationFrame(animate);
   renderer.autoClear = false;
   renderer.clear();
-  const delta = clock.getDelta();
   let t = clock.getElapsedTime();
   gu.time.value = t * Math.PI;
-  if (walkmixer) {
-    walkmixer.update(delta);
-  }
+  wavyTVPass.uniforms['time'].value += 0.05;
+  gradientOscillatingPass.uniforms['time'].value += 0.05;
 	composer.render();
 }
 
