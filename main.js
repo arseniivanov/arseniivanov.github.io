@@ -9,7 +9,6 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 let composer, walkmixer, clock;
 
 const ENTIRE_SCENE = 0;
-
 clock = new Clock();
 
 const scene = new Scene();  
@@ -38,18 +37,25 @@ scene.add(pointLight, ambientLight);
 
 
 let gu = {
-  time: {value: 0}
+  time: {value: 0},
+  breakawayThreshold: {value: 0.3}
 }
 
+
 let sizes = [];
+let breakawayStates = []
+let settledStates = [];
+
 let radii = [10, 10, 10, 15, 15, 20];
 
 let pts = new Array(300).fill().map(() => {
   sizes.push(Math.random() * 1.5 + 0.5); // Assuming you have initialized 'sizes' array somewhere else
+  breakawayStates.push(Math.random()); 
+  settledStates.push(0.0); 
   const radius = radii[Math.floor(Math.random() * radii.length)]; // Randomly select one of the three radii
   const angle = Math.random() * 2 * Math.PI; // Random angle in radians
-
   let x = radius * Math.cos(angle); // Convert polar to Cartesian coordinates
+
   let y = radius * Math.sin(angle); // Convert polar to Cartesian coordinates
   let z = -30; // Set z to -30 as per your requirement
 
@@ -60,7 +66,8 @@ scene.background = new Color(0x160016);
 
 let g = new BufferGeometry().setFromPoints(pts);
 g.setAttribute('sizes', new Float32BufferAttribute(sizes, 1));
-// Removed the 'shift' attribute as you no longer need it
+g.setAttribute('breakaway', new Float32BufferAttribute(breakawayStates, 1));
+g.setAttribute('settled', new Float32BufferAttribute(settledStates, 1));
 
 let m = new PointsMaterial({
   size: 0.5,
@@ -69,9 +76,13 @@ let m = new PointsMaterial({
   blending: AdditiveBlending,
   onBeforeCompile: shader => {
     shader.uniforms.time = gu.time; // Ensure time uniform is properly defined if needed
+    shader.uniforms.breakawayThreshold = gu.breakawayThreshold; // Ensure time uniform is properly defined if needed
     shader.vertexShader = `
       uniform float time;
+      uniform float breakawayThreshold;
       attribute float sizes;
+      attribute float breakaway;
+      attribute float settled;
       varying vec3 vColor;
       ${shader.vertexShader}
     `.replace(
@@ -88,10 +99,27 @@ let m = new PointsMaterial({
     ).replace(
       `#include <begin_vertex>`,
       `#include <begin_vertex>
-       float angle = atan(position.y, position.x) - time * 0.1; // Adjust time * 0.1 to change speed
-       float radius = length(position.xy); // Assuming your points are initially placed on a circle
-       transformed.x = cos(angle) * radius;
-       transformed.y = sin(angle) * radius;
+ float shouldBreakaway = breakaway < breakawayThreshold ? 1.0 : 0.0;
+ float angle = atan(position.y, position.x) - time * 0.1;
+ float radius = length(position.xy);
+ 
+ if (settled > 0.5) {
+     // Just orbit at current radius if settled
+     transformed.x = cos(angle) * radius;
+     transformed.y = sin(angle) * radius;
+ } else if (shouldBreakaway > 0.5) {
+     // Here we can add the time-varying probability
+     float timeHash = fract(sin(time * 0.1) * 43758.5453);
+     float particleHash = fract(sin(breakaway * 12.9898) * 43758.5453);
+     float direction = fract(timeHash * particleHash) < 0.5 ? 1.0 : -1.0;
+     
+     float newRadius = radius + direction * time * 0.1;
+     transformed.x = cos(angle) * newRadius;
+     transformed.y = sin(angle) * newRadius;
+ } else {
+     transformed.x = cos(angle) * radius;
+     transformed.y = sin(angle) * radius;
+ }
       `
     );
     // Removed the part related to 'shift' attribute in vertex shader
