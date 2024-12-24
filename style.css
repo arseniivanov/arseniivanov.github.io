@@ -77,11 +77,10 @@ blockquote p {
 
 /* Add the new style for the #word element */
 #word{
-  font-family: Megrim;
+  font-family: 'Orbitron';
   position: relative;
   /*bottom: 0;*/
   color: #cf0f;
-  -webkit-text-stroke: 0.15vh #c0f;
   transition: all 0.5s ease;
 }
 
