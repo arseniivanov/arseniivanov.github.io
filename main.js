@@ -35,16 +35,19 @@ const ambientLight = new AmbientLight(0xffffff);
 ambientLight.layers.enable(ENTIRE_SCENE);
 scene.add(pointLight, ambientLight);
 
-
 let gu = {
   time: {value: 0},
-  breakawayThreshold: {value: 0.3}
+  breakawayThreshold: {value: 0.7}, // break away from initial orbit
+  jumpProbability: { value: 0.4 }, //capture % when passing orbit
+  orbitalRadii: { value: new Vector3(10, 15, 20) },
+  transitionSpeed: { value: 0.05 }
 }
 
-
 let sizes = [];
-let breakawayStates = []
-let settledStates = [];
+let breakawayStates = [] // denotes if target breakawayprob
+let settledStates = []; // if target has settled at new orbit
+let initRadii = [];      // New array for transition targets
+let transitionStates = []; // Track transition progress
 
 let radii = [10, 10, 10, 15, 15, 20];
 
@@ -52,10 +55,14 @@ let pts = new Array(300).fill().map(() => {
   sizes.push(Math.random() * 1.5 + 0.5); // Assuming you have initialized 'sizes' array somewhere else
   breakawayStates.push(Math.random()); 
   settledStates.push(0.0); 
-  const radius = radii[Math.floor(Math.random() * radii.length)]; // Randomly select one of the three radii
-  const angle = Math.random() * 2 * Math.PI; // Random angle in radians
-  let x = radius * Math.cos(angle); // Convert polar to Cartesian coordinates
 
+  let radius = radii[Math.floor(Math.random() * radii.length)]; // Randomly select one of the three radii
+  const angle = Math.random() * 2 * Math.PI; // Random angle in radians
+
+  initRadii.push(radius);  // Initially, target = current
+  transitionStates.push(0.0);      // Not transitioning
+
+  let x = radius * Math.cos(angle); // Convert polar to Cartesian coordinates
   let y = radius * Math.sin(angle); // Convert polar to Cartesian coordinates
   let z = -30; // Set z to -30 as per your requirement
 
@@ -68,6 +75,8 @@ let g = new BufferGeometry().setFromPoints(pts);
 g.setAttribute('sizes', new Float32BufferAttribute(sizes, 1));
 g.setAttribute('breakaway', new Float32BufferAttribute(breakawayStates, 1));
 g.setAttribute('settled', new Float32BufferAttribute(settledStates, 1));
+g.setAttribute('initRadius', new Float32BufferAttribute(initRadii, 1));
+g.setAttribute('transition', new Float32BufferAttribute(transitionStates, 1));
 
 let m = new PointsMaterial({
   size: 0.5,
@@ -76,10 +85,16 @@ let m = new PointsMaterial({
   blending: AdditiveBlending,
   onBeforeCompile: shader => {
     shader.uniforms.time = gu.time; // Ensure time uniform is properly defined if needed
-    shader.uniforms.breakawayThreshold = gu.breakawayThreshold; // Ensure time uniform is properly defined if needed
-    shader.vertexShader = `
+    shader.uniforms.breakawayThreshold = gu.breakawayThreshold;
+shader.vertexShader = `
       uniform float time;
       uniform float breakawayThreshold;
+      uniform float jumpProbability;
+      uniform vec3 orbitalRadii;
+      uniform float transitionSpeed;
+
+      attribute float initRadius;
+      attribute float transition;
       attribute float sizes;
       attribute float breakaway;
       attribute float settled;
@@ -102,28 +117,63 @@ let m = new PointsMaterial({
  float shouldBreakaway = breakaway < breakawayThreshold ? 1.0 : 0.0;
  float angle = atan(position.y, position.x) - time * 0.1;
  float radius = length(position.xy);
+ float currentRadius = radius;
  
  if (settled > 0.5) {
      // Just orbit at current radius if settled
      transformed.x = cos(angle) * radius;
      transformed.y = sin(angle) * radius;
  } else if (shouldBreakaway > 0.5) {
-     // Here we can add the time-varying probability
+     // Get orbital radii
+     float r1 = orbitalRadii.x;
+     float r2 = orbitalRadii.y;
+     float r3 = orbitalRadii.z;
+     
+     // Simple drift behavior
      float timeHash = fract(sin(time * 0.1) * 43758.5453);
      float particleHash = fract(sin(breakaway * 12.9898) * 43758.5453);
      float direction = fract(timeHash * particleHash) < 0.5 ? 1.0 : -1.0;
      
-     float newRadius = radius + direction * time * 0.1;
-     transformed.x = cos(angle) * newRadius;
-     transformed.y = sin(angle) * newRadius;
+     // Constant drift speed
+     float newRadius = radius + direction * 0.05 * time;
+     
+     // Only check orbits that are different from our current radius
+     float d1 = abs(newRadius - r1);
+     float d2 = abs(newRadius - r2);
+     float d3 = abs(newRadius - r3);
+
+     if (initRadius - r1 < 0.05){
+        d1 = 1000.0;
+     } else if (initRadius - r2 < 0.05){
+        d2 = 1000.0;
+     } else {
+        d3 = 1000.0;
+     }
+     
+     float captureRand = fract(sin(dot(vec2(time, breakaway), vec2(12.9898, 78.233))) * 43758.5453);
+
+     float minDist = min(min(d1, d2), d3);
+      
+     if (minDist < 0.2 && captureRand < jumpProbability) {
+         float targetOrbit = r1;
+         if (d2 < min(d1, d3)) targetOrbit = r2;
+         if (d3 < min(d1, d2)) targetOrbit = r3;
+         
+         // Snap to new orbit
+         currentRadius = targetOrbit;
+     } else {
+         // Continue drifting
+         currentRadius = newRadius;
+     }
+     transformed.x = cos(angle) * currentRadius;
+     transformed.y = sin(angle) * currentRadius;
+
  } else {
      transformed.x = cos(angle) * radius;
      transformed.y = sin(angle) * radius;
  }
       `
     );
-    // Removed the part related to 'shift' attribute in vertex shader
-
     shader.fragmentShader = `
       varying vec3 vColor;
       ${shader.fragmentShader}
@@ -247,7 +297,19 @@ const circularGradientShader = {
 const gradientOscillatingPass = new ShaderPass(circularGradientShader);
 composer.addPass(gradientOscillatingPass);
 
-
+function updateParticleTransitions() {
+  const transitionAttr = g.attributes.transition;
+  const transitionArray = transitionAttr.array;
+  
+  // Update transition states
+  for (let i = 0; i < transitionArray.length; i++) {
+    if (transitionArray[i] < 1.0) {
+      transitionArray[i] = Math.min(1.0, transitionArray[i] + gu.transitionSpeed.value);
+    }
+  }
+  
+  transitionAttr.needsUpdate = true;
+}
 
 // Scroll Animation
 
@@ -265,6 +327,9 @@ function animate() {
   renderer.clear();
   let t = clock.getElapsedTime();
   gu.time.value = t * Math.PI;
+
+  updateParticleTransitions();
+  
   wavyTVPass.uniforms['time'].value += 0.05;
   gradientOscillatingPass.uniforms['time'].value += 0.05;
 	composer.render();
