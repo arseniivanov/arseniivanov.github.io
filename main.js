@@ -267,6 +267,10 @@ function moveCamera() {
 document.body.onscroll = moveCamera;
 moveCamera();
 
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.querySelector('.side-menu').classList.toggle('expanded');
+});
+
 // Animation Loop
 function animate() {
   requestAnimationFrame(animate);
