@@ -32,6 +32,12 @@
           </svg>
           <span>Projects</span>
         </a>
+        <a href="#blog" class="menu-item">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 0v12m5-8h7m-7 4h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Blog</span>
+        </a>
         <a href="#about" class="menu-item">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-13v5m0 3v2" stroke="currentColor" stroke-width="2"/>
@@ -51,24 +57,25 @@
       <header>
         <h1 id="word" data-text="Arseni Ivanov">Arseni Ivanov</h1>
         <p id="futuristic-text">
-          <span class="glitch-text" data-text="M.Sc Computer Engineering">M.Sc Computer Engineering</span> <br><br>
-          <span class="glitch-text" data-text="Computer Vision">Computer Vision</span> <br>
-          <span class="glitch-text" data-text="Machine Learning">Machine Learning</span> <br>
-          <span class="glitch-text" data-text="Edge AI">Edge AI</span> <br>
-          <span class="glitch-text" data-text="TinyML">TinyML</span> <br>
-          <span class="glitch-text" data-text="Neuromorphic compute">Neuromorphic compute</span>
+          <span class="word">Doctoral Student</span> <br>
+          <span class="glitch-text" data-text="Deep Neural Network Acceleration">Deep Neural Network Acceleration</span> <br>
+          <span class="glitch-text" data-text="Information Theory">Information Theory</span> <br>
+          <span class="glitch-text" data-text="GPGPU">GPGPU</span> <br>
+          <span class="glitch-text" data-text="Compute Optimization">Compute Optimization</span> <br>
+          <span class="glitch-text" data-text="Cognition">Cognition</span>
         </p>
       </header>
       
 
-      <section>
-        <h2>About Me</h2>
-        <p>My name is Arseni Ivanov, a 27-year-old M.Sc in Computer Engineering graduate from Lund University. I am passionate about compute, machine learning, cognition and cognitive neuroscience. I especially like the intersection of the brain and artificial neural networks, which I think will transform both compute and life sciences.</p>
-      
-        <p>Outside of my academic pursuits, I enjoy working on personal projects, such as applying innovative methodologies to Spiking Neural Networks. My programming knowledge and industry experience have equipped me with the skills to plan and execute machine learning projects from start to finish. Currently, I work with Images and PIR signals, exploring and developing ways to differentiate them by the object of cause. This knowledge has potential applications in other fields, such as EEG-signal analysis, and I am eager to continue expanding my expertise in the realm of neuroscience and biomimicry.</p>
-        
-        <p>When I'm not working on projects or deepening my understanding of the latest advancements in my field, I enjoy cooking, learning languages and dancing.</p>        
+      <section id="research">
+        <h2 id="futuristic-text">Research</h2>
 
+        <p>
+          <a href="https://portal.research.lu.se/en/persons/arseni-ivanov" class="project-link">
+            <h3>Research portal link</h3>
+          </a>
+          My research is focused on neural network acceleration for GPGPU. This means making neural networks execute efficiently by exploiting the hardware architecture of various graphics cards using interfaces such as Triton. I am interested in high-level optimizations that affect low-level runtime, such as reordering of compute, JIT compilation for GPU-info incorporation, or data reuse of execution between different kernels.
+        </p>
       </section>
 
       <section class="light">
@@ -97,10 +104,19 @@
         </p>
         
         <a href="cv.html" id="work-history-link">
-        <h2>Full CV</h2>
+        <h2 id="futuristic-text">Full CV</h2>
         </a>    
       </section>
 
+      <section id="about">
+        <h2 id="futuristic-text">About Me</h2>
+        <p>My name is Arseni Ivanov, a 27-year-old Doctoral Student with an M.Sc in Computer Engineering from Lund University. My research focuses on GPGPU programming optimizations for neural networks, but I am also passionate about compute, machine learning, cognition and cognitive neuroscience.</p>
+      
+        <p>Outside of my academic pursuits, I enjoy working on personal projects, such as applying my knowledge to practice and implementing small ML tools to help me in my daily life. My programming knowledge and industry experience have equipped me with the skills to plan and execute machine learning projects from start to finish. I am eager to continue expanding my expertise in cognitive topic surrounding machine learning such as neuroscience, information theory and cognition.</p>
+        
+        <p>When I'm not working on projects, I enjoy cooking intricate meals, learning languages and dancing.</p>        
+
+      </section>
     </main>
     
     <script type="module" src="/main.js"></script>

@@ -115,20 +115,21 @@ shader.vertexShader = `
       float currentRadius = radius;
       
       if (shouldBreakaway > 0.5) {
-     
         float dir = float(direction);
-        float newRadius = radius + 0.01 * dir * sizes*time*time; 
+        float cycleDuration = 25.0;
+        float cycleTime = mod(time, cycleDuration);
         
-        float currDist = abs(newRadius - initRadius);
-        if (currDist > 4.99) {
-            float targetOrbit = radius + dir*5.00;
-            currentRadius = targetOrbit;
-        } else {
-            currentRadius = newRadius;
-        }
+        // First half of cycle: move away, Second half: return
+        float transitionFactor = cycleTime < cycleDuration * 0.5 ? 
+          cycleTime / (cycleDuration * 0.5) : // Going out
+          1.0 - ((cycleTime - cycleDuration * 0.5) / (cycleDuration * 0.5)); // Coming back
+        
+        // Use transitionFactor to smoothly interpolate between original and target radius
+        float targetOrbit = radius + dir * 5.0;
+        currentRadius = mix(radius, targetOrbit, transitionFactor);
+        
         transformed.x = cos(angle) * currentRadius;
         transformed.y = sin(angle) * currentRadius;
-
       } else {
         transformed.x = cos(angle) * radius;
         transformed.y = sin(angle) * radius;
@@ -196,7 +197,7 @@ const wavyTVShader = {
 };
 
 const wavyTVPass = new ShaderPass(wavyTVShader);
-composer.addPass(wavyTVPass);
+//composer.addPass(wavyTVPass);
 
 
 const circularGradientShader = {
@@ -266,7 +267,6 @@ function moveCamera() {
 
 document.body.onscroll = moveCamera;
 moveCamera();
-
 document.querySelector('.menu-toggle').addEventListener('click', () => {
   document.querySelector('.side-menu').classList.toggle('expanded');
 });

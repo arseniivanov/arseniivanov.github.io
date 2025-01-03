@@ -84,11 +84,6 @@ blockquote p {
   transition: all 0.5s ease;
 }
 
-#word:hover {
-  color: #FFFFFF; /* Change text color slightly on hover */
-  text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF; /* Stronger glow on hover */
-}
-
 #futuristic-text {
   font-family: 'Orbitron', sans-serif; /* Replace with your chosen font */
   color: #ffe0ff; /* Light purple text */
@@ -97,8 +92,10 @@ blockquote p {
   transition: all 0.5s ease;
 }
 
-
-
+#futuristic-text .word {
+  margin-top: -60px;
+  display: block;
+}
 
 #work-history-link {
   text-decoration: none;
