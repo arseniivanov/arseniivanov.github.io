@@ -39,6 +39,7 @@ let gu = {
   time: {value: 0},
   breakawayThreshold: {value: 0.7}, // break away from initial orbit
   orbitalRadii: { value: new Vector3(10, 15, 20) },
+  isBook: { value: 0 }, // 0 for main cloud, 1 for book cloud
 }
 
 let sizes = [];
@@ -83,9 +84,11 @@ let m = new PointsMaterial({
   blending: AdditiveBlending,
   onBeforeCompile: shader => {
     shader.uniforms.time = gu.time; // Ensure time uniform is properly defined if needed
+    shader.uniforms.isBook = gu.isBook;
     shader.uniforms.breakawayThreshold = gu.breakawayThreshold;
 shader.vertexShader = `
       uniform float time;
+      uniform float isBook;
       uniform float breakawayThreshold;
       uniform vec3 orbitalRadii;
 
@@ -109,30 +112,35 @@ shader.vertexShader = `
     ).replace(
       `#include <begin_vertex>`,
       `#include <begin_vertex>
-      float radius = length(position.xy);
-      float shouldBreakaway = breakaway < breakawayThreshold ? 1.0 : 0.0;
-      float angle = atan(position.y, position.x) - time * 0.1;
-      float currentRadius = radius;
-      
-      if (shouldBreakaway > 0.5) {
-        float dir = float(direction);
-        float cycleDuration = 25.0;
-        float cycleTime = mod(time, cycleDuration);
+      if (isBook < 0.5){
+        float radius = length(position.xy);
+        float shouldBreakaway = breakaway < breakawayThreshold ? 1.0 : 0.0;
+        float angle = atan(position.y, position.x) - time * 0.1;
+        float currentRadius = radius;
         
-        // First half of cycle: move away, Second half: return
-        float transitionFactor = cycleTime < cycleDuration * 0.5 ? 
-          cycleTime / (cycleDuration * 0.5) : // Going out
-          1.0 - ((cycleTime - cycleDuration * 0.5) / (cycleDuration * 0.5)); // Coming back
-        
-        // Use transitionFactor to smoothly interpolate between original and target radius
-        float targetOrbit = radius + dir * 5.0;
-        currentRadius = mix(radius, targetOrbit, transitionFactor);
-        
-        transformed.x = cos(angle) * currentRadius;
-        transformed.y = sin(angle) * currentRadius;
+        if (shouldBreakaway > 0.5) {
+          float dir = float(direction);
+          float cycleDuration = 25.0;
+          float cycleTime = mod(time, cycleDuration);
+          
+          // First half of cycle: move away, Second half: return
+          float transitionFactor = cycleTime < cycleDuration * 0.5 ? 
+            cycleTime / (cycleDuration * 0.5) : // Going out
+            1.0 - ((cycleTime - cycleDuration * 0.5) / (cycleDuration * 0.5)); // Coming back
+          
+          // Use transitionFactor to smoothly interpolate between original and target radius
+          float targetOrbit = radius + dir * 5.0;
+          currentRadius = mix(radius, targetOrbit, transitionFactor);
+          
+          transformed.x = cos(angle) * currentRadius;
+          transformed.y = sin(angle) * currentRadius;
+        } else {
+          transformed.x = cos(angle) * radius;
+          transformed.y = sin(angle) * radius;
+        }
       } else {
-        transformed.x = cos(angle) * radius;
-        transformed.y = sin(angle) * radius;
+        float swayAmount = sin(time * 0.5 + position.x) * 0.2;
+        transformed.y += swayAmount;
       }
       `
     );
@@ -271,15 +279,166 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
   document.querySelector('.side-menu').classList.toggle('expanded');
 });
 
+document.querySelector('a[href="#publications"]').addEventListener('click', (e) => {
+  e.preventDefault();
+  moveToPublications();
+});
+
+function moveToPublications() {
+  // Store initial camera position for potential return
+  const initialPosition = camera.position.clone();
+  const initialRotation = camera.rotation.clone();
+  
+  // Timeline for camera movement
+  const duration = 2000; // 2 seconds
+  const startTime = performance.now();
+  const fadeInDuration = 1000; // Duration for fade-in effect
+  // Reset book properties
+  bookCloud.visible = true;
+  bookCloud.material.opacity = 0;
+  bookCloud.scale.set(0.1, 0.1, 0.1); // Start small
+
+  function animateCamera(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Smooth easing
+    const eased = progress < 0.5 
+      ? 2 * progress * progress 
+      : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+    
+    // Move camera forward
+    camera.position.z = 30 - (eased * 60);
+    
+    if (progress > 0.4) {
+      const fadeProgress = Math.min((progress - 0.4) / 0.6, 1);
+      bookCloud.material.opacity = fadeProgress;
+      const scale = 0.1 + fadeProgress * 0.9; // Grow from 0.1 to 1.0
+      bookCloud.scale.set(scale, scale, scale);
+    }
+    
+    if (progress < 1) {
+      requestAnimationFrame(animateCamera);
+    } else {
+      bookCloud.visible = true;
+    }
+  }
+  
+  requestAnimationFrame(animateCamera);
+}
+
+function createBookGeometry() {
+  const bookPoints = [];
+  const bookSizes = [];
+  const breakawayStates = [];
+  const directions = [];
+  const initRadii = [];
+  
+  // Book dimensions - adjusted for better proportions
+  const width = 15;  // Made narrower
+  const height = 20; // Made shorter
+  const depth = 4;   // Made thinner
+  const numPoints = 400; // More points for detail
+  
+  // Create corner points - new!
+  const cornerSize = 0.8;
+  const corners = [
+    [-width/2, -height/2, 0], [-width/2, height/2, 0],  // Spine corners
+    [width/2, -height/2, 0], [width/2, height/2, 0]     // Edge corners
+  ];
+  
+  corners.forEach(([x, y, z]) => {
+    // Create cluster of points for each corner
+    for(let i = 0; i < 10; i++) {
+      bookPoints.push(new Vector3(
+        x + (Math.random() - 0.5) * cornerSize,
+        y + (Math.random() - 0.5) * cornerSize,
+        z + (Math.random() - 0.5) * cornerSize
+      ));
+      bookSizes.push(1.5); // Larger points for corners
+      breakawayStates.push(0.2); // Less breakaway for stability
+      directions.push(1);
+      initRadii.push(1);
+    }
+  });
+  
+  // Create spine points (20%)
+  const spinePoints = Math.floor(numPoints * 0.2);
+  for (let i = 0; i < spinePoints; i++) {
+    const y = (Math.random() - 0.5) * height * 0.9; // Slightly inside corners
+    const x = -width/2 + Math.random() * 0.5; // Thinner spine
+    const z = (Math.random() - 0.5) * depth * 0.8;
+    
+    bookPoints.push(new Vector3(x, y, z));
+    bookSizes.push(Math.random() * 0.8 + 0.3); // Smaller points
+    breakawayStates.push(Math.random() * 0.3); // Less movement
+    directions.push(Math.random() > 0.5 ? 1 : -1);
+    initRadii.push(Math.random() * 2);
+  }
+  
+  // Create pages (60%)
+  const pagePoints = Math.floor(numPoints * 0.6);
+  for (let i = 0; i < pagePoints; i++) {
+    const y = (Math.random() - 0.5) * height * 0.95;
+    const x = (-width/2) + (Math.random() * width * 0.9);
+    
+    // Enhanced curve for pages
+    const xProgress = (x + width/2) / width;
+    const curve = Math.sin(xProgress * Math.PI) * depth/3;
+    const z = curve + (Math.random() - 0.5); // Less randomness
+    
+    bookPoints.push(new Vector3(x, y, z));
+    bookSizes.push(Math.random() * 0.5 + 0.2); // Smaller points for pages
+    breakawayStates.push(Math.random() * 0.5);
+    directions.push(Math.random() > 0.5 ? 1 : -1);
+    initRadii.push(Math.random() * 3);
+  }
+  
+  // Create cover edge points
+  const coverPoints = Math.floor(numPoints * 0.2);
+  for (let i = 0; i < coverPoints; i++) {
+    const y = (Math.random() - 0.5) * height;
+    const x = width/2 - Math.random() * 2; // Cover thickness
+    const z = (Math.random() - 0.5) * depth;
+    
+    bookPoints.push(new Vector3(x, y, z));
+    bookSizes.push(Math.random() * 2 + 0.7); // Larger points for cover
+    breakawayStates.push(Math.random());
+    directions.push(Math.random() > 0.5 ? 1 : -1);
+    initRadii.push(Math.random() * 5);
+  }
+  
+  const geometry = new BufferGeometry().setFromPoints(bookPoints);
+  geometry.setAttribute('sizes', new Float32BufferAttribute(bookSizes, 1));
+  geometry.setAttribute('breakaway', new Float32BufferAttribute(breakawayStates, 1));
+  geometry.setAttribute('direction', new Int32BufferAttribute(directions, 1));
+  geometry.setAttribute('initRadius', new Float32BufferAttribute(initRadii, 1));
+  
+  return geometry;
+}
+
+// Create and add book cloud to scene
+const bookCloud = new Points(createBookGeometry(), m); // Clone material to avoid affecting main cloud
+bookCloud.visible = false; // Initially hidden
+bookCloud.position.set(0, 0, -100); // Position to the right of the main cloud
+bookCloud.rotation.y = Math.PI * 0.15; // Slight angle to show depth
+scene.add(bookCloud);
+
 // Animation Loop
 function animate() {
   requestAnimationFrame(animate);
+
   renderer.autoClear = false;
   renderer.clear();
   let t = clock.getElapsedTime();
+  if (bookCloud.visible) {
+    // Gentle floating and rotation
+    bookCloud.position.y = Math.sin(t * 0.5) * 0.3;
+    bookCloud.rotation.y = Math.PI * 0.15 + Math.sin(t * 0.3) * 0.05;
+  }
   gu.time.value = t * Math.PI;
-  wavyTVPass.uniforms['time'].value += 0.05;
   gradientOscillatingPass.uniforms['time'].value += 0.05;
+  wavyTVPass.uniforms['time'].value += 0.05;
 	composer.render();
 }
 
