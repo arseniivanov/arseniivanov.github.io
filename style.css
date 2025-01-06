@@ -243,10 +243,10 @@ blockquote p {
   font-family: 'Orbitron', sans-serif;
 }
 
-/* Desktop styles - menu starts expanded */
-@media screen and (min-width: 768px) {
+/* Desktop styles - check for content overlap */
+@media screen and (min-width: 1024px) {
   .side-menu {
-    width: 200px; /* Start expanded */
+    width: 200px; /* Expanded by default on large screens */
   }
   
   .side-menu .menu-item span {
@@ -255,8 +255,8 @@ blockquote p {
   }
 }
 
-/* Mobile styles - menu starts collapsed */
-@media screen and (max-width: 767px) {
+/* Tablet and mobile styles - start collapsed */
+@media screen and (max-width: 1023px) {
   .side-menu {
     width: 60px; /* Start collapsed */
   }
@@ -266,7 +266,7 @@ blockquote p {
     transform: translateX(-10px);
   }
   
-  /* Only apply expanded styles when the 'expanded' class is present */
+  /* Only apply expanded styles when explicitly toggled */
   .side-menu.expanded {
     width: 200px;
   }
@@ -274,6 +274,11 @@ blockquote p {
   .side-menu.expanded .menu-item span {
     opacity: 1;
     transform: translateX(0);
+  }
+  
+  /* Adjust main content padding when menu is expanded */
+  .side-menu.expanded + main {
+    padding-left: 220px;
   }
 }
 
