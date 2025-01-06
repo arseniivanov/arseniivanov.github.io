@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/arseniivanov.github.io/', // This is needed for GitHub Pages
   build: {
     rollupOptions: {
       input: {
