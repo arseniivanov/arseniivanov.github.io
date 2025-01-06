@@ -285,6 +285,10 @@ document.querySelector('a[href="#publications"]').addEventListener('click', (e) 
 });
 
 function moveToPublications() {
+  // Scroll to section
+  const publicationsSection = document.getElementById('publications');
+  publicationsSection.scrollIntoView({ behavior: 'smooth' });
+
   // Store initial camera position for potential return
   const initialPosition = camera.position.clone();
   const initialRotation = camera.rotation.clone();
@@ -327,119 +331,247 @@ function moveToPublications() {
   requestAnimationFrame(animateCamera);
 }
 
+// Create a separate material for the book
+const bookMaterial = new PointsMaterial({
+  size: 0.5,
+  transparent: true,
+  depthTest: true,
+  blending: AdditiveBlending,
+  onBeforeCompile: shader => {
+    shader.uniforms.time = gu.time;
+    shader.uniforms.isBook = { value: 1.0 }; // Flag to identify book shader
+
+    shader.vertexShader = `
+      uniform float time;
+      attribute float sizes;
+      varying vec3 vColor;
+      
+      // Book-specific gentle floating animation
+      vec3 gentleFloat(vec3 pos, float time) {
+        float yOffset = sin(time * 0.5) * 0.1; // Gentle Y oscillation
+        float xOffset = cos(time * 0.3) * 0.05; // Subtle X movement
+        return vec3(pos.x + xOffset, pos.y + yOffset, pos.z);
+      }
+      
+      ${shader.vertexShader}
+    `.replace(
+      `gl_PointSize = size;`,
+      `gl_PointSize = size * sizes;`
+    ).replace(
+      `#include <color_vertex>`,
+      `#include <color_vertex>
+        float d = abs(position.y) / 20.0; // Adjusted for book height
+        d = pow(d, 0.5);
+        d = clamp(d, 0., 1.);
+        vColor = mix(vec3(227., 155., 0.), vec3(100., 50., 255.), d) / 255.;
+      `
+    ).replace(
+      `#include <begin_vertex>`,
+      `#include <begin_vertex>
+        // Apply gentle floating animation instead of orbital motion
+        transformed = gentleFloat(position, time);
+      `
+    );
+
+    shader.fragmentShader = `
+      varying vec3 vColor;
+      ${shader.fragmentShader}
+    `.replace(
+      `#include <clipping_planes_fragment>`,
+      `#include <clipping_planes_fragment>
+        float d = length(gl_PointCoord - vec2(0.5, 0.5));
+        d = smoothstep(0.5, 0.1, d);
+      `
+    ).replace(
+      `vec4 diffuseColor = vec4( diffuse, opacity );`,
+      `vec4 diffuseColor = vec4( vColor, d );`
+    );
+  }
+});
+
 function createBookGeometry() {
   const bookPoints = [];
   const bookSizes = [];
-  const breakawayStates = [];
-  const directions = [];
-  const initRadii = [];
   
-  // Book dimensions - adjusted for better proportions
-  const width = 15;  // Made narrower
-  const height = 20; // Made shorter
-  const depth = 4;   // Made thinner
-  const numPoints = 400; // More points for detail
+  // Book dimensions
+  const width = 15;
+  const height = 20;
+  const depth = 4;
+  const numPoints = 400;
   
-  // Create corner points - new!
-  const cornerSize = 0.8;
-  const corners = [
-    [-width/2, -height/2, 0], [-width/2, height/2, 0],  // Spine corners
-    [width/2, -height/2, 0], [width/2, height/2, 0]     // Edge corners
-  ];
-  
-  corners.forEach(([x, y, z]) => {
-    // Create cluster of points for each corner
-    for(let i = 0; i < 10; i++) {
+  // Helper function to add points with slight random offset
+  function addPointsWithJitter(basePoint, count, jitterAmount, size) {
+    const [x, y, z] = basePoint;
+    for (let i = 0; i < count; i++) {
       bookPoints.push(new Vector3(
-        x + (Math.random() - 0.5) * cornerSize,
-        y + (Math.random() - 0.5) * cornerSize,
-        z + (Math.random() - 0.5) * cornerSize
+        x + (Math.random() - 0.5) * jitterAmount,
+        y + (Math.random() - 0.5) * jitterAmount,
+        z + (Math.random() - 0.5) * jitterAmount
       ));
-      bookSizes.push(1.5); // Larger points for corners
-      breakawayStates.push(0.2); // Less breakaway for stability
-      directions.push(1);
-      initRadii.push(1);
+      bookSizes.push(size);
     }
+  }
+
+  // Create structured points for the book faces
+  function createFace(xRange, yRange, zPos, pointCount, sizeRange) {
+    const [xMin, xMax] = xRange;
+    const [yMin, yMax] = yRange;
+    
+    for (let i = 0; i < pointCount; i++) {
+      // Use structured positioning instead of pure random
+      const xProgress = Math.floor(i / Math.sqrt(pointCount)) / Math.sqrt(pointCount);
+      const yProgress = (i % Math.sqrt(pointCount)) / Math.sqrt(pointCount);
+      
+      const x = xMin + (xMax - xMin) * xProgress;
+      const y = yMin + (yMax - yMin) * yProgress;
+      
+      // Add slight randomness to prevent perfect grid
+      const jitter = 0.2;
+      bookPoints.push(new Vector3(
+        x + (Math.random() - 0.5) * jitter,
+        y + (Math.random() - 0.5) * jitter,
+        zPos + (Math.random() - 0.5) * jitter
+      ));
+      
+      const [minSize, maxSize] = sizeRange;
+      bookSizes.push(Math.random() * (maxSize - minSize) + minSize);
+    }
+  }
+
+  // Create front cover
+  createFace(
+    [-width/2, width/2],  // x range
+    [-height/2, height/2], // y range
+    depth/2,              // z position
+    100,                  // number of points
+    [0.3, 0.8]           // size range
+  );
+
+  // Create back cover
+  createFace(
+    [-width/2, width/2],
+    [-height/2, height/2],
+    -depth/2,
+    100,
+    [0.3, 0.8]
+  );
+
+  // Create spine (with more density)
+  createFace(
+    [-width/2 - 0.5, -width/2 + 0.5],
+    [-height/2, height/2],
+    0,
+    50,
+    [0.2, 0.6]
+  );
+
+  // Create pages (multiple layers)
+  const numLayers = 10;
+  for (let layer = 0; layer < numLayers; layer++) {
+    const zPos = (depth * (layer / numLayers - 0.5)) * 0.8;
+    const pagePoints = 20; // Points per layer
+    
+    for (let i = 0; i < pagePoints; i++) {
+      const xProgress = i / pagePoints;
+      const x = -width/2 + width * xProgress;
+      const y = (Math.random() - 0.5) * height * 0.95;
+      
+      // Create subtle page curve
+      const curve = Math.sin(xProgress * Math.PI) * (depth/8);
+      const z = zPos + curve;
+      
+      bookPoints.push(new Vector3(x, y, z));
+      bookSizes.push(Math.random() * 0.3 + 0.2); // Smaller points for pages
+    }
+  }
+
+  // Add reinforced edges
+  const edges = [
+    // Spine edges
+    [[-width/2, -height/2, 0], 10, 0.3, 1.2],
+    [[-width/2, height/2, 0], 10, 0.3, 1.2],
+    // Front edges
+    [[width/2, -height/2, depth/2], 10, 0.3, 1.2],
+    [[width/2, height/2, depth/2], 10, 0.3, 1.2],
+    // Back edges
+    [[width/2, -height/2, -depth/2], 10, 0.3, 1.2],
+    [[width/2, height/2, -depth/2], 10, 0.3, 1.2]
+  ];
+
+  edges.forEach(([point, count, jitter, size]) => {
+    addPointsWithJitter(point, count, jitter, size);
   });
-  
-  // Create spine points (20%)
-  const spinePoints = Math.floor(numPoints * 0.2);
-  for (let i = 0; i < spinePoints; i++) {
-    const y = (Math.random() - 0.5) * height * 0.9; // Slightly inside corners
-    const x = -width/2 + Math.random() * 0.5; // Thinner spine
-    const z = (Math.random() - 0.5) * depth * 0.8;
-    
-    bookPoints.push(new Vector3(x, y, z));
-    bookSizes.push(Math.random() * 0.8 + 0.3); // Smaller points
-    breakawayStates.push(Math.random() * 0.3); // Less movement
-    directions.push(Math.random() > 0.5 ? 1 : -1);
-    initRadii.push(Math.random() * 2);
-  }
-  
-  // Create pages (60%)
-  const pagePoints = Math.floor(numPoints * 0.6);
-  for (let i = 0; i < pagePoints; i++) {
-    const y = (Math.random() - 0.5) * height * 0.95;
-    const x = (-width/2) + (Math.random() * width * 0.9);
-    
-    // Enhanced curve for pages
-    const xProgress = (x + width/2) / width;
-    const curve = Math.sin(xProgress * Math.PI) * depth/3;
-    const z = curve + (Math.random() - 0.5); // Less randomness
-    
-    bookPoints.push(new Vector3(x, y, z));
-    bookSizes.push(Math.random() * 0.5 + 0.2); // Smaller points for pages
-    breakawayStates.push(Math.random() * 0.5);
-    directions.push(Math.random() > 0.5 ? 1 : -1);
-    initRadii.push(Math.random() * 3);
-  }
-  
-  // Create cover edge points
-  const coverPoints = Math.floor(numPoints * 0.2);
-  for (let i = 0; i < coverPoints; i++) {
-    const y = (Math.random() - 0.5) * height;
-    const x = width/2 - Math.random() * 2; // Cover thickness
-    const z = (Math.random() - 0.5) * depth;
-    
-    bookPoints.push(new Vector3(x, y, z));
-    bookSizes.push(Math.random() * 2 + 0.7); // Larger points for cover
-    breakawayStates.push(Math.random());
-    directions.push(Math.random() > 0.5 ? 1 : -1);
-    initRadii.push(Math.random() * 5);
-  }
-  
+
   const geometry = new BufferGeometry().setFromPoints(bookPoints);
   geometry.setAttribute('sizes', new Float32BufferAttribute(bookSizes, 1));
-  geometry.setAttribute('breakaway', new Float32BufferAttribute(breakawayStates, 1));
-  geometry.setAttribute('direction', new Int32BufferAttribute(directions, 1));
-  geometry.setAttribute('initRadius', new Float32BufferAttribute(initRadii, 1));
   
   return geometry;
 }
+// Create and add book cloud with new material
+const bookCloud = new Points(createBookGeometry(), bookMaterial);
+bookCloud.visible = false;
+bookCloud.position.set(0, 0, -100);
 
-// Create and add book cloud to scene
-const bookCloud = new Points(createBookGeometry(), m); // Clone material to avoid affecting main cloud
-bookCloud.visible = false; // Initially hidden
-bookCloud.position.set(0, 0, -100); // Position to the right of the main cloud
-bookCloud.rotation.y = Math.PI * 0.15; // Slight angle to show depth
+bookCloud.rotation.order = 'YXZ';  // Do Y rotation first, then X
+bookCloud.rotation.y = Math.PI * 0.6;
+bookCloud.rotation.x = Math.PI * 0.45;  // 80 degrees ≈ 0.45 * PI
 scene.add(bookCloud);
 
-// Animation Loop
+document.getElementById('home-button').addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  // Scroll to top smoothly
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+  
+  // Reset camera properties
+  camera.position.set(0, 0, 30);
+  camera.rotation.set(0, 0, 0);
+  
+  // Reset book cloud if it exists
+  if (bookCloud) {
+    bookCloud.visible = false;
+    if (bookUniforms && bookUniforms.openAmount) {
+      bookUniforms.openAmount.value = 0;
+    }
+  }
+
+  // Reset the main cloud
+  if (cloud) {
+    cloud.visible = true;
+    cloud.rotation.set(0, 0, 0);
+    gu.breakawayThreshold.value = 0.7; // Reset to initial threshold
+  }
+  
+  // Reset animation time
+  gu.time.value = 0;
+  
+  // Reset any post-processing effects if needed
+  if (gradientOscillatingPass) {
+    gradientOscillatingPass.uniforms['time'].value = 0;
+  }
+  if (wavyTVPass) {
+    wavyTVPass.uniforms['time'].value = 0;
+  }
+
+});
+
+// Update animation loop
 function animate() {
   requestAnimationFrame(animate);
-
   renderer.autoClear = false;
   renderer.clear();
+  
   let t = clock.getElapsedTime();
-  if (bookCloud.visible) {
-    // Gentle floating and rotation
-    bookCloud.position.y = Math.sin(t * 0.5) * 0.3;
-    bookCloud.rotation.y = Math.PI * 0.15 + Math.sin(t * 0.3) * 0.05;
-  }
+  
+  // Update uniforms
   gu.time.value = t * Math.PI;
   gradientOscillatingPass.uniforms['time'].value += 0.05;
   wavyTVPass.uniforms['time'].value += 0.05;
-	composer.render();
+  
+  composer.render();
 }
 
 // Select the arrow elements

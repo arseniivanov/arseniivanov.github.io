@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="favicon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arseni's Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="blog-styles.css" />
+  </head>
+  <body>
+    <canvas id="cnv"></canvas>
+    
+    <div class="header">
+      <a href="../index.html" class="back-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+
+    <div class="blog-container">
+      <div class="sidebar">
+        <div class="dropdown">
+          <button class="dropdown-button">Archive</button>
+          <div class="dropdown-content">
+            <div class="year-section">
+              <h3>2025</h3>
+              <a href="#" data-month="2025-01">January</a>
+              <a href="#" data-month="2025-02">February</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-content">
+        <!-- Blog entries will be dynamically loaded here -->
+      </div>
+    </div>
+
+    <script type="module" src="blog.js"></script>
+  </body>
+</html>

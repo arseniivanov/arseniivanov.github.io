@@ -333,3 +333,24 @@ blockquote p {
     transform: skew(-0.5deg, 0.5deg);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.95);
+  --spacing: 350px;
+
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menu-divider {
+  height: 1px;
+  background: rgb(199, 219, 86);
+  opacity: 0.5;
+  margin: 8px 16px;
+  transition: opacity 0.3s ease;
+}
