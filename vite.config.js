@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
   build: {
@@ -6,8 +7,12 @@ export default defineConfig({
       input: {
         index: 'index.html',
         cv: 'cv.html',
-        blog: 'blog.html'  // Added blog.html since you have that page now
+        blog: 'blog.html'
       }
     }
-  }
+  },
+  // Add this section to copy public assets
+  publicDir: 'public',
+  // Add this section to ensure PDFs are handled
+  assetsInclude: ['**/*.pdf']
 });
