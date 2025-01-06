@@ -243,8 +243,38 @@ blockquote p {
   font-family: 'Orbitron', sans-serif;
 }
 
-.side-menu.expanded {
-  width: 200px;
+/* Desktop styles - menu starts expanded */
+@media screen and (min-width: 768px) {
+  .side-menu {
+    width: 200px; /* Start expanded */
+  }
+  
+  .side-menu .menu-item span {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile styles - menu starts collapsed */
+@media screen and (max-width: 767px) {
+  .side-menu {
+    width: 60px; /* Start collapsed */
+  }
+  
+  .side-menu .menu-item span {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  
+  /* Only apply expanded styles when the 'expanded' class is present */
+  .side-menu.expanded {
+    width: 200px;
+  }
+  
+  .side-menu.expanded .menu-item span {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .menu-toggle {

@@ -558,6 +558,29 @@ document.getElementById('home-button').addEventListener('click', (e) => {
 
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector('.side-menu');
+  
+  // Set initial state based on screen width
+  if (window.innerWidth >= 768) {
+    menu.classList.add('expanded');
+  }
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      menu.classList.add('expanded');
+    } else {
+      menu.classList.remove('expanded');
+    }
+  });
+  
+  // Toggle menu on button click (for mobile)
+  document.querySelector('.menu-toggle').addEventListener('click', () => {
+    menu.classList.toggle('expanded');
+  });
+});
+
 // Update animation loop
 function animate() {
   requestAnimationFrame(animate);
