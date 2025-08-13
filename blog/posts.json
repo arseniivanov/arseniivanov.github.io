@@ -3,5 +3,10 @@
     "file": "2025-07-17-information-dtype-representations.md",
     "title": "Why FP4 is not a free lunch for ML",
     "date": "July 17, 2025"
+  },
+  {
+    "file": "2025-08-13-the-expressive-power-of-activation-functions.md",
+    "title": "The expressive power of activation functions",
+    "date": "August 13, 2025"
   }
 ]
