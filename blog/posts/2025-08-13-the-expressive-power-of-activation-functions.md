@@ -1,3 +1,5 @@
+# The expressive power of activation functions
+
 Recently, Stephen Welch and his team produced this video about deep learning and how the activation function folds each neuron's output representation plane in space. I highly recommend anyone interested in deep learning fundamentals to watch it and get a feeling on how DNN decisions are made on a toy level.
 https://www.youtube.com/watch?v=qx7hirqgfuU
 
