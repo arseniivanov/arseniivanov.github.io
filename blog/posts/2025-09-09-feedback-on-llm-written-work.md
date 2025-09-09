@@ -17,6 +17,6 @@ I want to finish this blog with what I think this means for the future. I think 
 
 Students that have the understanding of how learning works, and the discipline to endure hard feelings of learning when there is a path of **MUCH** less resistance will be able to use the tools efficiently and know more than ever.
 
-[^1] https://arxiv.org/pdf/2506.08872
-[^2] https://pubmed.ncbi.nlm.nih.gov/23815457/
-[^3] https://pmc.ncbi.nlm.nih.gov/articles/PMC3604148/
+[^1]: https://arxiv.org/pdf/2506.08872
+[^2]: https://pubmed.ncbi.nlm.nih.gov/23815457/
+[^3]: https://pmc.ncbi.nlm.nih.gov/articles/PMC3604148/
