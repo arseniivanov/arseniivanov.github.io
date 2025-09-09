@@ -1,162 +1,239 @@
+/* --- Theme Variables --- */
+:root {
+  /* Light Theme (Default) */
+  --bg-color: #F5EFFF;
+  --text-color: #333;
+  --text-color-light: #555;
+  --accent-color: #A594F9;
+  --accent-color-readable: #6a5acd;
+  --border-color: #E5D9F2;
+  --border-color-strong: #CDC1FF;
+  --card-bg-color: #FFFFFF;
+  --code-bg-color: #E5D9F2;
+  --code-text-color: #3d3d3d;
+  --link-hover-bg: #E5D9F2;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme */
+  --bg-color: #1a1a2e;
+  --text-color: #e0e0e0;
+  --text-color-light: #b0b0b0;
+  --accent-color: #A594F9;
+  --accent-color-readable: #CDC1FF;
+  --border-color: #2a2a4e;
+  --border-color-strong: #4a4a7e;
+  --card-bg-color: #161625;
+  --code-bg-color: #2a2a4e;
+  --code-text-color: #d0d0d0;
+  --link-hover-bg: #2a2a4e;
+}
+
+/* --- General Body & Font Styling --- */
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #160016;
-  color: rgb(199, 219, 86);
-  font-family: 'Orbitron', sans-serif;
-  min-height: 100vh;
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#cnv {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;  /* Keep canvas in the back */
-  width: 100%;
-  height: 100%;
-}
-
+/* --- Header & Buttons --- */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
 }
 
 .back-button {
-  color: rgb(199, 219, 86);
+  color: var(--accent-color);
   text-decoration: none;
-  display: flex;
+  font-weight: bold;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  border: 1px solid rgb(199, 219, 86);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  background: transparent;  /* Add explicit transparent background */
+  border: 1px solid var(--border-color-strong);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
 }
 
 .back-button:hover {
-  background: rgba(199, 219, 86, 0.1);
+  background-color: var(--link-hover-bg);
+  border-color: var(--accent-color);
 }
 
-.blog-container {
-  position: relative;
-  z-index: 1;
+.theme-toggle-button {
+  background: none;
+  border: 1px solid var(--border-color-strong);
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
   display: flex;
-  padding-top: 80px;
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
+.theme-toggle-button:hover {
+  background-color: var(--link-hover-bg);
+}
+
+.moon-icon { display: none; }
+.sun-icon { display: block; }
+
+[data-theme="dark"] .moon-icon { display: block; }
+[data-theme="dark"] .sun-icon { display: none; }
+
+
+/* --- Main Layout --- */
+.blog-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* --- Sidebar & Archive --- */
 .sidebar {
   width: 250px;
-  padding: 20px;
-  position: sticky;
-  top: 80px;
-  height: fit-content;
+  flex-shrink: 0;
 }
 
-.dropdown {
-  position: relative;
-  width: 100%;
+.sidebar h2 {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color-strong);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
 }
 
-.dropdown-button {
-  width: 100%;
-  padding: 10px;
-  background: transparent;
-  border: 1px solid rgb(199, 219, 86);
-  color: rgb(199, 219, 86);
-  font-family: 'Orbitron', sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
+#archive-links .year-section h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-color-light);
 }
 
-.dropdown-button:hover {
-  background: rgba(199, 219, 86, 0.1);
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: rgba(22, 0, 22, 0.95);
-  backdrop-filter: blur(4px);
-  width: 100%;
-  border: 1px solid rgb(199, 219, 86);
-  margin-top: 5px;
-}
-
-.dropdown:hover .dropdown-content {
+#archive-links a {
   display: block;
-}
-
-.year-section {
-  padding: 10px;
-}
-
-.year-section h3 {
-  margin: 0;
-  padding: 5px 0;
-  font-size: 0.9em;
-}
-
-.year-section a {
-  display: block;
-  padding: 5px 15px;
-  color: rgb(199, 219, 86);
   text-decoration: none;
-  transition: all 0.3s ease;
+  color: var(--accent-color-readable);
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
-.year-section a:hover {
-  background: rgba(199, 219, 86, 0.1);
+#archive-links a:hover, #archive-links a.active {
+  background-color: var(--link-hover-bg);
+  color: var(--accent-color);
 }
 
+/* --- Blog Content Area --- */
 .blog-content {
-  flex: 1;
-  padding: 20px;
-  background: rgba(22, 0, 22, 0.95); /* More opaque background */
-  backdrop-filter: blur(4px);
-  margin: 20px;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.blog-content h1, .blog-content h2, .blog-content h3 {
+  color: var(--text-color);
+  line-height: 1.3;
+  margin-top: 2rem;
+}
+
+.blog-content p {
+  margin-bottom: 1rem;
+}
+
+.blog-content a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
-  border: 1px solid rgba(199, 219, 86, 0.3);
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+  background-color: #fff; /* Keep image backgrounds white for clarity */
 }
 
-/* Blog post styles */
-.blog-post {
-  margin-bottom: 40px;
+.blog-content pre {
+  background-color: var(--code-bg-color);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--border-color-strong);
 }
 
-.blog-post h2 {
-  color: rgb(199, 219, 86);
-  font-size: 1.5em;
-  margin-bottom: 10px;
+.blog-content code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.9em;
+  color: var(--code-text-color);
 }
 
-.blog-post .date {
-  color: rgba(199, 219, 86, 0.7);
-  font-size: 0.8em;
-  margin-bottom: 15px;
-}
-
-.blog-post .content {
-  line-height: 1.6;
-}
-
+/* --- Responsive design for smaller screens --- */
 @media (max-width: 768px) {
   .blog-container {
     flex-direction: column;
   }
-  
   .sidebar {
     width: 100%;
-    position: static;
-    padding: 20px;
   }
+}
+
+/* =================================
+   Footnote Styles
+   ================================= */
+
+/* Style for the superscript number in the main text */
+[data-footnote-ref] {
+  vertical-align: super;
+  font-size: 0.8em;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--link-color); /* Use your theme's link color */
+  padding: 0 0.1em;
+}
+
+[data-footnote-ref]:hover {
+  text-decoration: underline;
+}
+
+/* Container for the entire footnotes section at the bottom */
+.footnotes-section {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color); /* Use your theme's border color */
+}
+
+/* The ordered list of footnotes */
+.footnotes-list {
+  padding-left: 20px;
+  font-size: 0.9em;
+  color: var(--secondary-text-color); /* Use your theme's secondary text color */
+}
+
+/* Each individual footnote item */
+.footnotes-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Style for the little back-arrow '↩' */
+[data-footnote-backref] {
+  text-decoration: none;
+  color: var(--link-color);
+  margin-left: 0.5rem;
+}
+
+[data-footnote-backref]:hover {
+  text-decoration: underline;
 }

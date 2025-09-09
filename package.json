@@ -11,12 +11,15 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1",
-    "vite": "^5.0.8"
+    "vite": "^7.0.5"
   },
   "dependencies": {
-    "three": "^0.159.0",
-    "delaunator": "^5.0.0",
     "@tweenjs/tween.js": "^21.0.0",
-    "stats.js": "^0.17.0"
+    "delaunator": "^5.0.0",
+    "katex": "^0.16.22",
+    "marked": "^16.0.0",
+    "marked-footnote": "^1.4.0",
+    "stats.js": "^0.17.0",
+    "three": "^0.159.0"
   }
 }

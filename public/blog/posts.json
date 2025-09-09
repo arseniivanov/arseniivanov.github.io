@@ -1,0 +1,22 @@
+[
+  {
+    "file": "2025-07-17-information-dtype-representations.md",
+    "title": "Why FP4 is not a free lunch for ML",
+    "date": "July 17, 2025"
+  },
+  {
+    "file": "2025-08-13-the-expressive-power-of-activation-functions.md",
+    "title": "The expressive power of activation functions",
+    "date": "August 13, 2025"
+  },
+  {
+    "file": "2025-08-20-the-metric-misalignment.md",
+    "title": "The metric misalignment in (Computer Graphics) compression research",
+    "date": "August 20, 2025"
+  },
+  {
+    "file": "2025-09-09-feedback-on-llm-written-work.md",
+    "title": "Feedback on LLM-written work",
+    "date": "September 9, 2025"
+  }
+]
