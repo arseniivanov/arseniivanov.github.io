@@ -18,5 +18,10 @@
     "file": "2025-09-09-feedback-on-llm-written-work.md",
     "title": "Feedback on LLM-written work",
     "date": "September 9, 2025"
+  },
+  {
+    "file": "2025-09-17-moe.md",
+    "title": "Why the MoE pattern is inevitably a part of the future of compute in ML",
+    "date": "September 17, 2025"
   }
 ]
