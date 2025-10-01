@@ -23,5 +23,10 @@
     "file": "2025-09-17-moe.md",
     "title": "Why the MoE pattern is inevitably a part of the future of compute in ML",
     "date": "September 17, 2025"
+  },
+  {
+    "file": "2025-10-01-trimul.md",
+    "title": "Making Trimul go BRRRR for GPGPU",
+    "date": "October 1, 2025"
   }
 ]
