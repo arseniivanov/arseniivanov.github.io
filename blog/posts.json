@@ -40,5 +40,12 @@
     "date": "October 1, 2025",
     "id": "trimul-gpgpu",
     "tags": ["GPGPU", "Optimization"]
+  },
+  {
+    "file": "2025-10-12-softmax.md",
+    "title": "What does attention represent and why do we need softmax?",
+    "date": "October 12, 2025",
+    "id": "attention-softmax",
+    "tags": ["LLM", "Compute", "Information Theory", "GPGPU", "Neural Networks"]
   }
 ]
