@@ -47,5 +47,12 @@
     "date": "October 12, 2025",
     "id": "attention-softmax",
     "tags": ["LLM", "Compute", "Information Theory", "GPGPU", "Neural Networks"]
+  },
+  {
+    "file": "2025-10-21-helion.md",
+    "title": "Helion and its auto-generated Triton kernels",
+    "date": "October 21, 2025",
+    "id": "helion",
+    "tags": ["GPGPU", "Neural Networks"]
   }
 ]
