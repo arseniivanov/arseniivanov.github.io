@@ -1,6 +1,60 @@
 import { marked, Marked } from 'marked';
 import markedFootnote from 'marked-footnote';
 
+const obsidianLinkExtension = {
+  name: 'obsidianLink',
+  level: 'inline',
+  // Start checking when we see '[['
+  start(src) { return src.indexOf('[['); },
+  
+  tokenizer(src) {
+    // Regex to capture [[Target]] or [[Target|Alias]]
+    // We check for ^[[ to ensure we don't accidentally capture ![[
+    const rule = /^\[\[([^\]]+)\]\]/;
+    const match = rule.exec(src);
+    
+    // Only match if it's NOT an image (checked by previous extension or simple logic)
+    // But since marked processes tokens in order, and '![[' doesn't match '^[[', we are safe.
+    if (match) {
+      return {
+        type: 'obsidianLink',
+        raw: match[0],
+        text: match[1].trim(), 
+      };
+    }
+  },
+  
+  renderer(token) {
+    // Handle pipes: [[Post Title|Custom Text]]
+    const parts = token.text.split('|');
+    const targetTitle = parts[0].trim();
+    const displayText = parts[1] ? parts[1].trim() : targetTitle;
+
+    // --- THE LOOKUP LOGIC ---
+    // We search the global 'allPosts' array to find the ID corresponding to the Title.
+    // We use toLowerCase() to make it case-insensitive.
+    const foundPost = allPosts.find(post => 
+      post.title.toLowerCase() === targetTitle.toLowerCase()
+    );
+
+    if (foundPost) {
+      // Success: We found the ID (e.g., "attention-softmax") from the title
+      return `<a href="#${foundPost.id}" class="internal-link" data-post-id="${foundPost.id}">${displayText}</a>`;
+    } else {
+      // Fallback: Post not found (or maybe the user typed the ID directly?)
+      // Let's check if they used the ID instead of the title just in case
+      const foundById = allPosts.find(post => post.id === targetTitle);
+      
+      if (foundById) {
+        return `<a href="#${foundById.id}" class="internal-link">${displayText}</a>`;
+      }
+
+      // Broken link style
+      return `<span style="color: red;" title="Post not found: ${targetTitle}">${displayText}</span>`;
+    }
+  }
+};
+
 const obsidianImageExtension = {
   name: 'obsidianImage',
   level: 'inline',
@@ -22,7 +76,7 @@ const obsidianImageExtension = {
 };
 
 const myMarked = new Marked();
-myMarked.use({ extensions: [obsidianImageExtension] }, markedFootnote());
+myMarked.use({ extensions: [obsidianImageExtension, obsidianLinkExtension] }, markedFootnote());
 
 const themeToggle = document.getElementById('theme-toggle');
 const docElement = document.documentElement;

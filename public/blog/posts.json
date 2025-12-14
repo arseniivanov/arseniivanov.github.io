@@ -40,5 +40,26 @@
     "date": "October 1, 2025",
     "id": "trimul-gpgpu",
     "tags": ["GPGPU", "Optimization"]
+  },
+  {
+    "file": "2025-10-12-softmax.md",
+    "title": "What does attention represent and why do we need softmax?",
+    "date": "October 12, 2025",
+    "id": "attention-softmax",
+    "tags": ["LLM", "Compute", "Information Theory", "GPGPU", "Neural Networks"]
+  },
+  {
+    "file": "2025-10-21-helion.md",
+    "title": "Helion and its auto-generated Triton kernels",
+    "date": "October 21, 2025",
+    "id": "helion",
+    "tags": ["GPGPU", "Neural Networks"]
+  },
+  {
+    "file": "2025-12-14-attention.md",
+    "title": "On Attention and its Hardware",
+    "date": "December 14, 2025",
+    "id": "attention",
+    "tags": ["GPGPU", "Neural Networks", "Information Theory", "Compute"]
   }
 ]
