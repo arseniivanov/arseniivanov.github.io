@@ -342,6 +342,7 @@ We can see that clearly, smaller shapes are not well-supported in the cuBLAS ker
 
 To improve upon this, we write the epilogue (SwiGLU) in PTX and get a 20% speed increase:
 ```python
+{% raw %}
     asm_str = """
     {
         .reg .f32 %g0, %g1, %v0, %v1; //inputs gate0, gate1, val0, val1
@@ -374,9 +375,8 @@ To improve upon this, we write the epilogue (SwiGLU) in PTX and get a 20% speed 
         
         // Write to Output ($0)
         mov.b32 $0, {%h0, %h1};
-
-
     }
+{% endraw %}
     """
 ```
 
