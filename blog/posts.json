@@ -61,5 +61,12 @@
     "date": "December 14, 2025",
     "id": "attention",
     "tags": ["GPGPU", "Neural Networks", "Information Theory", "Compute"]
+  },
+  {
+    "file": "2026-01-21-nvidiagemm.md",
+    "title": "NVIDIA GB200 GPU Programming Challenge",
+    "date": "January 21, 2026",
+    "id": "nvidia-gemm",
+    "tags": ["Neural Networks", "Compute", "Optimization"]
   }
 ]
