@@ -38,11 +38,11 @@ A [paper](https://gwern.net/doc/cs/hardware/2014-horowitz-2.pdf) on energy effic
 You can imagine that Linear Attention, which loops/iterates on its context, will do less computation, and more memory reads/writes, which is inherently more expensive on both CPUs and GPUs. When we look at computations/watt, which will be inherent OPEX for datacenters, the goal will be to minimize this, meaning that standard attention will likely win over it's variants in the short term.
 ![[Pasted image 20251214143447.png]]
 ### The Role of Softmax in Attention
-Previously, when I made the blog on [[What does attention represent and why do we need softmax?]], I was perplexed by the amount of scheduling needed to be done to estimate Softmax on the B200. However, when writing that blog, I did not have the full picture for the reason. Now, it's quite apparent, NVIDIA made a mistake when designing the B200, look:
+Previously, when I made the blog on [[What does attention represent and why do we need softmax?]], I was perplexed by the amount of scheduling needed to be done to estimate Softmax on the B200. However, when writing that blog, I did not have the full picture for the reason. Now, it's quite apparent, NVIDIA made a bet/choice on more GEMM than softmax when designing the B200, look:
 ![[Pasted image 20251214113232.png]]
 As you can see the relative amount of FP8 dense compute grows 250% between Hopper and Blackwell, meanwhile, the amount of SFU exponent (used in Attention) grows 11%. This creates a massive bottleneck, since the majority of the workloads are just running LLMs on the cards, which for FP8 and FP4 use Scaled Dot Product followed by Softmax. So the throughput is increased more than twofold for the GEMM, but just above 10% for the Softmax which is inherently following the GEMM in the relevant workloads. 
 
-Luckily, NVIDIA realized their mistake, and the Blackwell Ultra variant of the GPU has a two-fold increase in SFU Exponential calculation capacity, better matching up to the increase in GEMM compute. 
+When it became clear that most workloads are just running Scaled Dot Product Attention, the next Blackwell Ultra variant of the GPU has a two-fold increase in SFU Exponential calculation capacity, better matching up to the increase in GEMM compute. 
 
 This was the reason for the convoluted Softmax dynamics on the B200 cards. And also showcases the strength of NVIDIA with a willingness to move fast and adapt to the market. 
 

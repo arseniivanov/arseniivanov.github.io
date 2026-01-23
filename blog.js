@@ -197,6 +197,11 @@ async function loadPost(postFile) {
     if (!response.ok) throw new Error(`Could not fetch ${postFile}`);
     const markdown = await response.text();
     contentContainer.innerHTML = myMarked.parse(markdown);
+
+    if (window.innerWidth <= 768 && window.location.hash) {
+      contentContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
   } catch (error) {
     console.error('Error loading post:', error);
     contentContainer.innerHTML = `<p>Sorry, could not load the selected post.</p>`;
