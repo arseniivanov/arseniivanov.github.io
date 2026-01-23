@@ -1,4 +1,4 @@
-const DATA_SOURCE = './books.json';
+const DATA_SOURCE = 'books.json';
 
 const container = document.getElementById('books-grid');
 const statsContainer = document.getElementById('book-stats');
