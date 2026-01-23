@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/assets/favicon-DP6kERL7.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arseni's Bookshelf</title>
+    <!-- Reusing your existing styles -->
+    <script type="module" crossorigin src="/assets/books-B1byVSIP.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="/assets/blog-styles-ktWcUThL.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav-left">
+        <a href="/index.html" class="back-button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Home
+        </a>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle-button">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </div>
+
+    <div class="blog-container">
+      <div class="sidebar">
+        <h2>Library Stats</h2>
+        <div id="book-stats">
+          <p>Loading stats...</p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <h2>Sort By</h2>
+          <div class="sort-controls">
+            <button id="sort-rating" class="sort-btn active">My Rating</button>
+            <button id="sort-date" class="sort-btn">Date Read</button>
+          </div>
+        </div>
+        
+        <div class="sidebar-note" style="margin-top: 2rem; font-size: 0.9em; color: var(--text-color-light);">
+          <p>This list is automatically synced with my Goodreads "Read" shelf.</p>
+          <p>A rating of 5 means I loved the book, a rating of 4 means it was good/average, a rating of 3 means it lacked something but was still readable, rating below that do not exist because I probably did not finish the book.</p>
+        </div>
+      </div>
+
+      <main class="blog-content">
+        <h1>Read Books</h1>
+        <p>A collection of books I've read and the occasional review(on Goodreads).</p>
+        
+        <!-- The Grid Container -->
+        <div id="books-grid" class="books-grid">
+          <div class="loading-indicator">Fetching library...</div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Load the Book Script -->
+    
+    <!-- Reuse your theme toggle logic (assuming it's in blog.js or separate) -->
+    <!-- You might want to extract the theme logic to a separate 'theme.js' to share between pages -->
+    <script>
+       // Minimal theme toggle JS re-implementation if not shared
+       const toggleBtn = document.getElementById('theme-toggle');
+       const html = document.documentElement;
+       
+       // Check local storage
+       const savedTheme = localStorage.getItem('theme') || 'light';
+       html.setAttribute('data-theme', savedTheme);
+
+       toggleBtn.addEventListener('click', () => {
+         const currentTheme = html.getAttribute('data-theme');
+         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+         html.setAttribute('data-theme', newTheme);
+         localStorage.setItem('theme', newTheme);
+       });
+    </script>
+  </body>
+</html>
