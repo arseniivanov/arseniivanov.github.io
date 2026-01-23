@@ -7,7 +7,8 @@ export default defineConfig({
       input: {
         index: 'index.html',
         cv: 'cv.html',
-        blog: 'blog.html'
+        blog: 'blog.html',
+        books: 'books.html'
       }
     }
   },
