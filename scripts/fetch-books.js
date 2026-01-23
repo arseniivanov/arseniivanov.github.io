@@ -1,18 +1,24 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// In ES Modules, __dirname isn't available by default, so we recreate it:
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configuration
-// We use the direct Goodreads URL (Node.js doesn't have CORS issues, so no proxy needed!)
 const RSS_URL = 'https://www.goodreads.com/review/list_rss/172764601?key=wExbcxeflLcFhgeItq3NpzBKLCUwXbdbKCyN5-_rh__Nmn2g&shelf=read&per_page=100';
 
 async function main() {
   try {
     console.log("Fetching Goodreads RSS...");
     const response = await fetch(RSS_URL);
+    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+    
     const xmlText = await response.text();
 
-    // Simple Regex Parsing (since Node.js doesn't have DOMParser built-in)
-    // 1. Split into items
+    // Simple Regex Parsing
+    // 1. Split into items, remove the header
     const items = xmlText.split('<item>').slice(1);
     
     const books = items.map(item => {
@@ -26,15 +32,18 @@ async function main() {
       const link = extract('link');
       const author = extract('author_name');
       const description = extract('description');
+      // Goodreads sometimes uses user_read_at, sometimes pubDate
       const rawDate = extract('user_read_at') || extract('pubDate');
 
       // Extract Cover Image (High Res Fix)
+      // We look for src="..." inside the description HTML
       const imgMatch = description.match(/src="([^"]+)"/);
       let coverUrl = imgMatch ? imgMatch[1] : 'https://via.placeholder.com/150x200?text=No+Cover';
+      
+      // Clean up Goodreads URL scaling parameters to get full size
       coverUrl = coverUrl.replace(/\._S[XY]\d+_/, ''); 
 
-      // Extract Rating (Your specific rating, not average)
-      // Matches "rating: 5" specifically
+      // Extract Rating (Your specific rating: "rating: 5")
       const ratingMatch = description.match(/rating:\s*(\d)/);
       const rating = ratingMatch ? parseInt(ratingMatch[1]) : 0;
 
@@ -54,7 +63,7 @@ async function main() {
     const outputPath = path.join(__dirname, '../books.json');
     fs.writeFileSync(outputPath, JSON.stringify(books, null, 2));
     
-    console.log("Successfully saved books.json");
+    console.log(`Successfully saved to ${outputPath}`);
 
   } catch (error) {
     console.error("Error updating books:", error);
