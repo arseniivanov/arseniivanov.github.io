@@ -51,12 +51,17 @@ function renderBooks(books) {
     const card = document.createElement('div');
     card.className = 'book-card';
     
-    const ratingStars = '<span class="star-filled">★</span>'.repeat(book.rating) + 
-                        '<span class="star-empty">☆</span>'.repeat(5 - book.rating);
+    // Create stars string
+    const ratingStars = book.rating > 0 
+      ? '<span class="star-filled">★</span>'.repeat(book.rating) + 
+        '<span class="star-empty">☆</span>'.repeat(5 - book.rating)
+      : '<span class="star-empty" style="font-size:0.8em; color:#ccc">Not rated</span>';
 
+    // We removed the "View on Goodreads" link at the bottom.
+    // The Cover and the Title are now the main click targets.
     card.innerHTML = `
       <div class="book-cover-container">
-        <a href="${book.link}" target="_blank">
+        <a href="${book.link}" target="_blank" class="cover-link" aria-label="View ${book.title} on Goodreads">
           <img src="${book.coverUrl}" alt="${book.title}" class="book-cover" loading="lazy">
         </a>
       </div>
@@ -66,7 +71,6 @@ function renderBooks(books) {
             <h3 class="book-title">${book.title}</h3>
         </a>
         <div class="book-author">by ${book.author}</div>
-        <a href="${book.link}" target="_blank" class="read-more-link">View on Goodreads</a>
       </div>
     `;
 

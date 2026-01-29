@@ -275,27 +275,32 @@ body {
 .book-card {
   background-color: var(--card-bg-color);
   border: 1px solid var(--border-color);
-  border-radius: 8px; /* Slightly sharper corners */
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   height: 100%;
+  position: relative; /* establishes a context for the content */
 }
 
 .book-card:hover {
   transform: translateY(-3px);
   border-color: var(--accent-color-readable);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
 .book-cover-container {
-  height: 240px; /* Fixed height for the image area */
-  background-color: var(--card-bg-color); /* Match card bg */
+  /* Enforce rigid height to prevent text from overlapping or jumping */
+  height: 240px; 
+  width: 100%;
+  background-color: var(--card-bg-color);
   padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0; /* Prevents the image area from getting squashed */
+  box-sizing: border-box;
 }
 
 .book-cover {
@@ -303,9 +308,14 @@ body {
   max-height: 100%;
   width: auto;
   height: auto;
-  /* This ensures the whole cover is visible without cropping */
-  object-fit: contain; 
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Shadow on the book itself */
+  object-fit: contain;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+/* Hover effect on the image when hovering the card */
+.book-card:hover .book-cover {
+  transform: scale(1.03);
 }
 
 .book-info {
@@ -313,14 +323,17 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  text-align: center; /* Center the text for a clean look */
+  text-align: center;
   border-top: 1px solid var(--border-color);
+  background-color: var(--card-bg-color);
+  z-index: 1; /* Ensures text sits 'above' if there was ever a margin issue */
 }
 
 .book-rating {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   letter-spacing: 2px;
+  color: #ffb400;
 }
 
 .star-filled { color: #ffb400; }
@@ -328,15 +341,22 @@ body {
 
 .book-title-link {
   text-decoration: none;
-  color: inherit;
+  color: var(--text-color);
+  display: block; /* Make the link fill the width */
 }
 
 .book-title {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-color);
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
   line-height: 1.3;
+  
+  /* Prevent extremely long titles from breaking the card layout */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book-title:hover {
@@ -346,26 +366,8 @@ body {
 .book-author {
   font-size: 0.85rem;
   color: var(--text-color-light);
-  margin-bottom: 0.75rem;
-}
-
-.read-more-link {
-  margin-top: auto; /* Pushes the link to the bottom */
-  font-size: 0.8rem;
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: bold;
-  border: 1px solid var(--border-color-strong);
-  padding: 4px 12px;
-  border-radius: 20px;
-  align-self: center;
-  transition: all 0.2s;
-}
-
-.read-more-link:hover {
-  background-color: var(--accent-color);
-  color: white;
-  border-color: var(--accent-color);
+  margin-top: auto; /* Pushes author to bottom if title is short */
+  font-style: italic;
 }
 
 .loading-indicator {
@@ -373,6 +375,21 @@ body {
   text-align: center;
   padding: 2rem;
   color: var(--text-color-light);
+}
+
+/* --- Mobile Specific Fixes --- */
+@media (max-width: 600px) {
+  .books-grid {
+    /* on very small screens, ensure columns aren't too skinny */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 1rem;
+  }
+  
+  .book-cover-container {
+    /* Slightly smaller covers on mobile to save space */
+    height: 200px;
+    padding: 0.5rem;
+  }
 }
 
 /* --- Sort Controls --- */

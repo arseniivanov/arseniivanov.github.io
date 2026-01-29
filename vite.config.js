@@ -8,7 +8,8 @@ export default defineConfig({
         index: 'index.html',
         cv: 'cv.html',
         blog: 'blog.html',
-        books: 'books.html'
+        books: 'books.html',
+        games: 'games.html'
       }
     }
   },
