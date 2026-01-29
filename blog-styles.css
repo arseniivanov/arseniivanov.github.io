@@ -405,3 +405,90 @@ body {
   border-left: 2px solid var(--accent-color);
   padding-left: 0.5rem;
 }
+
+/* --- Games Extension (Append to blog-styles.css) --- */
+
+/* Game Cards are similar to books but handle landscape images */
+.game-card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  height: 100%;
+  position: relative;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-color-readable);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.game-cover-container {
+  /* Games are usually 16:9, so we use a shorter fixed height */
+  height: 160px; 
+  background-color: #000; /* Dark bg for letterboxing */
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image fill the area */
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-cover {
+  transform: scale(1.05);
+}
+
+.game-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-top: 1px solid var(--border-color);
+}
+
+.game-meta {
+  font-size: 0.75rem;
+  color: var(--text-color-light);
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-playing { background-color: var(--accent-color); color: #fff; }
+.status-beaten { background-color: #4CAF50; color: #fff; }
+.status-yet { background-color: var(--border-color-strong); color: var(--text-color); }
+.status-dropped { background-color: #e53935; color: #fff; }
+
+.section-title {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Joystick Icon Animation */
+.nav-icon-joystick {
+  transition: transform 0.2s ease;
+}
+.menu-item:hover .nav-icon-joystick {
+  transform: rotate(-10deg);
+}

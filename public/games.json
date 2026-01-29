@@ -1,0 +1,1607 @@
+{
+  "playing": [
+    {
+      "id": 18905,
+      "title": "Manifold Garden",
+      "slug": "manifold-garden",
+      "image": "https://media.rawg.io/media/screenshots/c3f/c3fc81393a8c90d48e0b2f03f56caf7a.jpg",
+      "released": "2019-10-18",
+      "user_rating": 0,
+      "global_rating": 4.23,
+      "metacritic": 84,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "playing"
+    },
+    {
+      "id": 428664,
+      "title": "A Space for the Unbound",
+      "slug": "a-space-for-the-unbound",
+      "image": "https://media.rawg.io/media/games/c18/c180a02a53ce8c8cf23f11f182184103.jpg",
+      "released": "2023-01-19",
+      "user_rating": 0,
+      "global_rating": 4.44,
+      "metacritic": 85,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "playing"
+    },
+    {
+      "id": 573277,
+      "title": "Norco",
+      "slug": "norco",
+      "image": "https://media.rawg.io/media/games/b23/b23e516c7c846435b9e7708a73207b67.jpg",
+      "released": "2022-03-24",
+      "user_rating": 0,
+      "global_rating": 3.94,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "playing"
+    }
+  ],
+  "completed": [
+    {
+      "id": 59313,
+      "title": "Gris",
+      "slug": "gris",
+      "image": "https://media.rawg.io/media/games/51c/51c430f1795c79b78f863a9f22dc422d.jpg",
+      "released": "2018-12-13",
+      "user_rating": 5,
+      "global_rating": 4.2,
+      "metacritic": 83,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 295,
+      "title": "Oxenfree",
+      "slug": "oxenfree",
+      "image": "https://media.rawg.io/media/games/7ba/7baf4663962bad7197e2470d59a6e322.jpg",
+      "released": "2016-01-14",
+      "user_rating": 4,
+      "global_rating": 3.91,
+      "metacritic": 80,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 11312,
+      "title": "The Long Dark",
+      "slug": "the-long-dark",
+      "image": "https://media.rawg.io/media/games/fd2/fd20a68d7ef195855588c937865dd0a7.jpg",
+      "released": "2014-09-22",
+      "user_rating": 4,
+      "global_rating": 3.91,
+      "metacritic": 76,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 2873,
+      "title": "The Witness",
+      "slug": "the-witness",
+      "image": "https://media.rawg.io/media/games/00b/00b164224ebaf381104d0b215a37afb3.jpg",
+      "released": "2016-01-25",
+      "user_rating": 5,
+      "global_rating": 4.0,
+      "metacritic": 87,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 2819,
+      "title": "Firewatch",
+      "slug": "firewatch",
+      "image": "https://media.rawg.io/media/games/0be/0bea0a08a4d954337305391b778a7f37.jpg",
+      "released": "2016-02-08",
+      "user_rating": 5,
+      "global_rating": 4.3,
+      "metacritic": 81,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 3612,
+      "title": "Hotline Miami",
+      "slug": "hotline-miami",
+      "image": "https://media.rawg.io/media/games/9fa/9fa63622543e5d4f6d99aa9d73b043de.jpg",
+      "released": "2012-10-22",
+      "user_rating": 4,
+      "global_rating": 4.38,
+      "metacritic": 85,
+      "genres": [
+        "Action",
+        "Shooter"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 422,
+      "title": "Terraria",
+      "slug": "terraria",
+      "image": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg",
+      "released": "2011-05-16",
+      "user_rating": 4,
+      "global_rating": 4.07,
+      "metacritic": 81,
+      "genres": [
+        "Action",
+        "Indie"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 545015,
+      "title": "Disco Elysium: Final Cut",
+      "slug": "disco-elysium-final-cut",
+      "image": "https://media.rawg.io/media/games/0af/0afe9e8ace196123d8c7cf22172cec63.jpg",
+      "released": "2021-03-30",
+      "user_rating": 5,
+      "global_rating": 4.66,
+      "metacritic": 90,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 28172,
+      "title": "Kingdom Come: Deliverance",
+      "slug": "kingdom-come-deliverance",
+      "image": "https://media.rawg.io/media/games/d8f/d8f3b28fc747ed6f92943cdd33fb91b5.jpeg",
+      "released": "2018-02-13",
+      "user_rating": 4,
+      "global_rating": 4.05,
+      "metacritic": 71,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 22509,
+      "title": "Minecraft",
+      "slug": "minecraft",
+      "image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
+      "released": "2009-05-10",
+      "user_rating": 4,
+      "global_rating": 4.44,
+      "metacritic": 83,
+      "genres": [
+        "Action",
+        "Simulation"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 350584,
+      "title": "Dinkum",
+      "slug": "dinkum",
+      "image": "https://media.rawg.io/media/screenshots/f6f/f6f78fd14d016f11d0efa74968d4eb30.jpg",
+      "released": null,
+      "user_rating": 4,
+      "global_rating": 3.5,
+      "metacritic": null,
+      "genres": [
+        "RPG",
+        "Simulation"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 19397,
+      "title": "Vampire: The Masquerade - Bloodlines",
+      "slug": "vampire-the-masquerade-bloodlines",
+      "image": "https://media.rawg.io/media/games/6f0/6f0a69db053bce957d8328a7253fbb29.jpg",
+      "released": "2004-11-15",
+      "user_rating": 5,
+      "global_rating": 4.36,
+      "metacritic": 80,
+      "genres": [
+        "Action",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 5678,
+      "title": "The Elder Scrolls IV: Oblivion",
+      "slug": "the-elder-scrolls-iv-oblivion",
+      "image": "https://media.rawg.io/media/games/615/61503312a95d451198d80d9bae275f79.jpg",
+      "released": "2006-03-20",
+      "user_rating": 5,
+      "global_rating": 4.33,
+      "metacritic": 94,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 5679,
+      "title": "The Elder Scrolls V: Skyrim",
+      "slug": "the-elder-scrolls-v-skyrim",
+      "image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
+      "released": "2011-11-11",
+      "user_rating": 5,
+      "global_rating": 4.42,
+      "metacritic": 94,
+      "genres": [
+        "Action",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 1682,
+      "title": "The Wolf Among Us",
+      "slug": "the-wolf-among-us",
+      "image": "https://media.rawg.io/media/games/be0/be084b850302abe81675bc4ffc08a0d0.jpg",
+      "released": "2013-10-10",
+      "user_rating": 5,
+      "global_rating": 4.39,
+      "metacritic": 82,
+      "genres": [
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 7955,
+      "title": "Morphopolis",
+      "slug": "morphopolis",
+      "image": "https://media.rawg.io/media/screenshots/df7/df7314ef7e0ab35865c1584b120bd630.jpeg",
+      "released": "2013-11-07",
+      "user_rating": 4,
+      "global_rating": 2.61,
+      "metacritic": 74,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 3253,
+      "title": "Hatoful Boyfriend",
+      "slug": "hatoful-boyfriend",
+      "image": "https://media.rawg.io/media/games/81e/81e5cf3f433473af3a04888e3baceeba.jpg",
+      "released": "2014-09-03",
+      "user_rating": 3,
+      "global_rating": 3.28,
+      "metacritic": 68,
+      "genres": [
+        "Adventure",
+        "Simulation"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 13344,
+      "title": "The Deed",
+      "slug": "the-deed",
+      "image": "https://media.rawg.io/media/screenshots/ac6/ac6aacfc445fd572c1283d3a8fce5ca2.jpg",
+      "released": "2015-11-23",
+      "user_rating": 3,
+      "global_rating": 2.35,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 15687,
+      "title": "Dr. Langeskov, The Tiger, and The Terribly Cursed Emerald: A Whirlwind Heist",
+      "slug": "dr-langeskov-the-tiger-and-the-terribly-cursed-eme",
+      "image": "https://media.rawg.io/media/screenshots/76a/76a4511b693e10e282463b5904a2f450.jpg",
+      "released": "2015-12-04",
+      "user_rating": 4,
+      "global_rating": 3.73,
+      "metacritic": null,
+      "genres": [
+        "Indie"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 654,
+      "title": "Stardew Valley",
+      "slug": "stardew-valley",
+      "image": "https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg",
+      "released": "2016-02-25",
+      "user_rating": 5,
+      "global_rating": 4.39,
+      "metacritic": 89,
+      "genres": [
+        "RPG",
+        "Simulation"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 14353,
+      "title": "The Deed: Dynasty",
+      "slug": "the-deed-dynasty",
+      "image": "https://media.rawg.io/media/screenshots/467/46712c18c62d4cb5abce2d2d2b8fa981.jpg",
+      "released": "2016-05-10",
+      "user_rating": 3,
+      "global_rating": 1.84,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 119,
+      "title": "Kona",
+      "slug": "kona",
+      "image": "https://media.rawg.io/media/screenshots/9ab/9ab4630464e41947a2cef77b2b6263dc.jpg",
+      "released": "2017-03-16",
+      "user_rating": 4,
+      "global_rating": 3.32,
+      "metacritic": 73,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 216268,
+      "title": "Enderal: Forgotten Stories",
+      "slug": "enderal",
+      "image": "https://media.rawg.io/media/games/acb/acb888502dc7b0821269199d3fc7e45e.jpg",
+      "released": "2019-02-13",
+      "user_rating": 5,
+      "global_rating": 4.3,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 58764,
+      "title": "Outer Wilds",
+      "slug": "outer-wilds",
+      "image": "https://media.rawg.io/media/games/9f4/9f418898f5415668ca47b5f4ab1ecfeb.jpg",
+      "released": "2019-05-29",
+      "user_rating": 5,
+      "global_rating": 4.36,
+      "metacritic": 84,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 41494,
+      "title": "Cyberpunk 2077",
+      "slug": "cyberpunk-2077",
+      "image": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+      "released": "2020-12-10",
+      "user_rating": 5,
+      "global_rating": 4.23,
+      "metacritic": 73,
+      "genres": [
+        "Action",
+        "Shooter"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 248521,
+      "title": "Valheim",
+      "slug": "valheim",
+      "image": "https://media.rawg.io/media/games/adb/adb59be81367b19c2544457424bcf086.jpg",
+      "released": "2021-02-02",
+      "user_rating": 4,
+      "global_rating": 4.0,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 366083,
+      "title": "Black Book",
+      "slug": "black-book",
+      "image": "https://media.rawg.io/media/games/1d6/1d6f294a27ff1b90d4a4a79d42d3f7b2.jpg",
+      "released": "2021-08-10",
+      "user_rating": 4,
+      "global_rating": 4.06,
+      "metacritic": 78,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 599019,
+      "title": "Len's Island",
+      "slug": "lens-island",
+      "image": "https://media.rawg.io/media/screenshots/30f/30fff44f0c2b97ebf68106ba8a307d6c.jpg",
+      "released": "2021-11-26",
+      "user_rating": 3,
+      "global_rating": 3.5,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 49417,
+      "title": "Wytchwood",
+      "slug": "wytchwood",
+      "image": "https://media.rawg.io/media/screenshots/058/058544caa3abdd324b09c5a8bec1f899.jpg",
+      "released": "2021-12-09",
+      "user_rating": 4,
+      "global_rating": 3.74,
+      "metacritic": 78,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 739659,
+      "title": "Fields Of Mistria",
+      "slug": "fields-of-mistria",
+      "image": "https://media.rawg.io/media/screenshots/f4f/f4f9d3b394f97197eb9546f217c1b42a.jpg",
+      "released": "2024-08-05",
+      "user_rating": 5,
+      "global_rating": 4.0,
+      "metacritic": null,
+      "genres": [
+        "RPG",
+        "Simulation"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 966539,
+      "title": "Everholm",
+      "slug": "everholm",
+      "image": "https://media.rawg.io/media/screenshots/441/441690854b82d7cee8ad7fa2d54e056d.jpg",
+      "released": "2024-11-11",
+      "user_rating": 4,
+      "global_rating": 0.0,
+      "metacritic": null,
+      "genres": [
+        "RPG",
+        "Casual"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 452638,
+      "title": "Stray",
+      "slug": "stray-2",
+      "image": "https://media.rawg.io/media/games/cd3/cd3c9c7d3e95cb1608fd6250f1b90b7a.jpg",
+      "released": "2022-07-19",
+      "user_rating": 5,
+      "global_rating": 4.15,
+      "metacritic": 82,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 947315,
+      "title": "The Coffin of Andy and Leyley",
+      "slug": "the-coffin-of-andy-and-leyley",
+      "image": "https://media.rawg.io/media/screenshots/179/17914faab2284cf0c81fa3061d1b98d3.jpg",
+      "released": "2023-03-25",
+      "user_rating": 4,
+      "global_rating": 3.9,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 842402,
+      "title": "Dredge",
+      "slug": "dredge",
+      "image": "https://media.rawg.io/media/games/c2c/c2c9f1c026b6c1be5bc2160baf7224ea.jpg",
+      "released": "2023-03-29",
+      "user_rating": 5,
+      "global_rating": 4.3,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 871264,
+      "title": "Dave the Diver",
+      "slug": "dave-the-diver",
+      "image": "https://media.rawg.io/media/games/1ee/1eec43616e3ff00a674124d746926b23.jpg",
+      "released": "2023-06-28",
+      "user_rating": 4,
+      "global_rating": 4.26,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "beaten"
+    },
+    {
+      "id": 977316,
+      "title": "Balatro",
+      "slug": "balatro",
+      "image": "https://media.rawg.io/media/games/821/821a40bd0cc0ac7dfb3fe97a7878dc1f.jpg",
+      "released": "2024-02-20",
+      "user_rating": 4,
+      "global_rating": 4.31,
+      "metacritic": null,
+      "genres": [
+        "Strategy",
+        "Casual"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 989580,
+      "title": "Mouthwashing",
+      "slug": "mouthwashing",
+      "image": "https://media.rawg.io/media/games/ba1/ba1bf58929130f56be870b6217746aed.jpg",
+      "released": "2024-09-26",
+      "user_rating": 5,
+      "global_rating": 4.22,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "beaten"
+    }
+  ],
+  "backlog": [
+    {
+      "id": 139102,
+      "title": "Cairn",
+      "slug": "cairn",
+      "image": "https://media.rawg.io/media/games/e13/e1395f34907fdcc9da63e72e24d868f8.jpg",
+      "released": "2026-01-28",
+      "user_rating": 0,
+      "global_rating": 0.0,
+      "metacritic": null,
+      "genres": [
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 479694,
+      "title": "Inscryption",
+      "slug": "inscryption",
+      "image": "https://media.rawg.io/media/games/73e/73efc5c0ac6f354271dae610276f617c.jpg",
+      "released": "2021-10-19",
+      "user_rating": 0,
+      "global_rating": 4.38,
+      "metacritic": 86,
+      "genres": [
+        "Adventure",
+        "Strategy"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 29177,
+      "title": "Detroit: Become Human",
+      "slug": "detroit-become-human",
+      "image": "https://media.rawg.io/media/games/951/951572a3dd1e42544bd39a5d5b42d234.jpg",
+      "released": "2018-05-25",
+      "user_rating": 0,
+      "global_rating": 4.34,
+      "metacritic": 79,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 320,
+      "title": "Night in the Woods",
+      "slug": "night-in-the-woods",
+      "image": "https://media.rawg.io/media/games/b0a/b0a370527fea0e824225269d4a8797db.jpg",
+      "released": "2017-02-21",
+      "user_rating": 0,
+      "global_rating": 4.25,
+      "metacritic": 88,
+      "genres": [
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 965471,
+      "title": "MiSide",
+      "slug": "miside",
+      "image": "https://media.rawg.io/media/games/151/1518595310e4bbef5139b98a4cb36a81.jpg",
+      "released": "2024-12-10",
+      "user_rating": 0,
+      "global_rating": 4.2,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 945034,
+      "title": "Slay the Princess",
+      "slug": "slay-the-princess",
+      "image": "https://media.rawg.io/media/games/1fa/1fa542171e580af49fabd094bd232659.jpg",
+      "released": "2023-10-23",
+      "user_rating": 0,
+      "global_rating": 4.37,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 263548,
+      "title": "Little Misfortune",
+      "slug": "little-misfortune",
+      "image": "https://media.rawg.io/media/games/669/6691144e293eebc308d86ca3c8317c5a.jpg",
+      "released": "2019-09-17",
+      "user_rating": 0,
+      "global_rating": 3.96,
+      "metacritic": 57,
+      "genres": [
+        "Adventure",
+        "Casual"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 17998,
+      "title": "Antichamber",
+      "slug": "antichamber",
+      "image": "https://media.rawg.io/media/screenshots/76f/76ff4289a2a3ad7659cae129b859d67e.jpg",
+      "released": "2013-01-31",
+      "user_rating": 0,
+      "global_rating": 4.07,
+      "metacritic": 82,
+      "genres": [
+        "Indie",
+        "Puzzle"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 424978,
+      "title": "Signalis",
+      "slug": "signalis",
+      "image": "https://media.rawg.io/media/games/480/480295ba922318bb052d169174ec88aa.jpg",
+      "released": "2022-10-27",
+      "user_rating": 0,
+      "global_rating": 4.35,
+      "metacritic": 82,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 667649,
+      "title": "Indika",
+      "slug": "indika",
+      "image": "https://media.rawg.io/media/games/adf/adf16f490ed67a7b01586b8ef37e827e.jpg",
+      "released": "2024-05-02",
+      "user_rating": 0,
+      "global_rating": 3.99,
+      "metacritic": null,
+      "genres": [
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 46568,
+      "title": "Sorry, James",
+      "slug": "sorry-james",
+      "image": "https://media.rawg.io/media/screenshots/c50/c5016a1759641cd48ead4c93b38fa376.jpg",
+      "released": "2017-11-10",
+      "user_rating": 0,
+      "global_rating": 3.25,
+      "metacritic": null,
+      "genres": [
+        "Casual",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 517384,
+      "title": "Turnip Boy Commits Tax Evasion",
+      "slug": "turnip-boy-commits-tax-evasion",
+      "image": "https://media.rawg.io/media/games/4ce/4ce87a0d1274009bc19588eb491b1e01.jpg",
+      "released": "2021-04-22",
+      "user_rating": 0,
+      "global_rating": 3.88,
+      "metacritic": 74,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 420000,
+      "title": "Tiny Bunny",
+      "slug": "tiny-bunny",
+      "image": "https://media.rawg.io/media/games/d69/d6973b48a043bd48a351cb1fa190b212.jpg",
+      "released": "2025-12-05",
+      "user_rating": 0,
+      "global_rating": 4.28,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 11839,
+      "title": "Pathologic 2",
+      "slug": "pathologic",
+      "image": "https://media.rawg.io/media/games/c4a/c4a948e3d1ab733f21641844c6df3e43.jpg",
+      "released": "2019-05-22",
+      "user_rating": 0,
+      "global_rating": 4.06,
+      "metacritic": 69,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 442839,
+      "title": "Observer: System Redux",
+      "slug": "observer-system-redux",
+      "image": "https://media.rawg.io/media/games/9ac/9acdbcf11b7aa2c9d629ee38f8fa8c71.jpg",
+      "released": "2020-11-10",
+      "user_rating": 0,
+      "global_rating": 4.09,
+      "metacritic": 80,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 13404,
+      "title": "VA-11 Hall-A: Cyberpunk Bartender Action",
+      "slug": "va-11-hall-a",
+      "image": "https://media.rawg.io/media/games/c57/c57c9f8ea28b148cf991ac49c1e920f4.jpg",
+      "released": "2016-06-21",
+      "user_rating": 0,
+      "global_rating": 4.37,
+      "metacritic": 81,
+      "genres": [
+        "Adventure",
+        "Simulation"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 961206,
+      "title": "Neva",
+      "slug": "neva-2",
+      "image": "https://media.rawg.io/media/games/5eb/5eb783656623aa13d6fc65e470dd5dba.jpg",
+      "released": "2024-10-15",
+      "user_rating": 0,
+      "global_rating": 4.38,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 976306,
+      "title": "Until Then",
+      "slug": "until-then",
+      "image": "https://media.rawg.io/media/screenshots/59e/59ef0d956e5aabf5b43af2fc271a93b9.jpg",
+      "released": "2024-06-25",
+      "user_rating": 0,
+      "global_rating": 4.4,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Casual"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 973315,
+      "title": "A Date with Death",
+      "slug": "a-date-with-death-2",
+      "image": "https://media.rawg.io/media/screenshots/597/597876a14ed71264cbebb4dda7549e8e.jpg",
+      "released": "2023-12-07",
+      "user_rating": 0,
+      "global_rating": 3.83,
+      "metacritic": null,
+      "genres": [
+        "Simulation",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 982433,
+      "title": "Cabernet",
+      "slug": "cabernet",
+      "image": "https://media.rawg.io/media/screenshots/624/624f7fc033c4afbdff09df3aa10866ac.jpg",
+      "released": "2025-02-20",
+      "user_rating": 0,
+      "global_rating": 4.38,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 962958,
+      "title": "Citizen Sleeper 2: Starward Vector",
+      "slug": "citizen-sleeper-2-starward-vector",
+      "image": "https://media.rawg.io/media/games/12b/12b8cad155b90622ba46c65b3c1a4a16.jpg",
+      "released": "2025-01-31",
+      "user_rating": 0,
+      "global_rating": 3.33,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 428966,
+      "title": "Paradise Killer",
+      "slug": "paradise-killer",
+      "image": "https://media.rawg.io/media/games/e7c/e7c0f996a82ebec502dfbd979da58e0b.jpg",
+      "released": "2020-09-03",
+      "user_rating": 0,
+      "global_rating": 3.88,
+      "metacritic": 84,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 994282,
+      "title": "Wanderstop",
+      "slug": "wanderstop",
+      "image": "https://media.rawg.io/media/games/bdd/bdd27a940c8a09e68044689fa856884d.jpg",
+      "released": "2025-03-11",
+      "user_rating": 0,
+      "global_rating": 4.0,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Simulation"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 650616,
+      "title": "Minds Beneath Us",
+      "slug": "minds-beneath-us",
+      "image": "https://media.rawg.io/media/games/591/5911ad2b33bc835de4cb2a10f71ebb96.jpg",
+      "released": "2024-07-31",
+      "user_rating": 0,
+      "global_rating": 4.14,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 1010950,
+      "title": "Winter Burrow",
+      "slug": "winter-burrow",
+      "image": "https://media.rawg.io/media/games/8f7/8f7df68072959a0454789a7ec5cf8332.jpg",
+      "released": "2025-11-12",
+      "user_rating": 0,
+      "global_rating": 3.33,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Simulation"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 961684,
+      "title": "Killer Frequency",
+      "slug": "killer-frequency",
+      "image": "https://media.rawg.io/media/games/5b6/5b65fcbccf5d08dcd73b5638615b3774.jpg",
+      "released": "2023-06-01",
+      "user_rating": 0,
+      "global_rating": 4.0,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Simulation"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 997679,
+      "title": "Urban Myth Dissolution Center",
+      "slug": "urban-myth-dissolution-center",
+      "image": "https://media.rawg.io/media/games/812/812074460500c997141935d0b29f54c5.jpg",
+      "released": "2025-02-12",
+      "user_rating": 0,
+      "global_rating": 3.71,
+      "metacritic": null,
+      "genres": [
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 801567,
+      "title": "Pentiment",
+      "slug": "pentiment",
+      "image": "https://media.rawg.io/media/games/f1d/f1d25c007b9b45c98b57ff9ebbca9692.jpg",
+      "released": "2022-11-14",
+      "user_rating": 0,
+      "global_rating": 4.24,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Casual"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 17010,
+      "title": "Kentucky Route Zero",
+      "slug": "kentucky-route-zero",
+      "image": "https://media.rawg.io/media/games/177/1775aacedb915b0e0880476530dc87b4.jpg",
+      "released": "2020-01-28",
+      "user_rating": 0,
+      "global_rating": 3.98,
+      "metacritic": 81,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 993124,
+      "title": "Luma Island",
+      "slug": "luma-island",
+      "image": "https://media.rawg.io/media/screenshots/9af/9af0f5380a20e2ae9788f0be1bdbede8.jpg",
+      "released": "2024-11-20",
+      "user_rating": 0,
+      "global_rating": 0.0,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 10081,
+      "title": "Detention",
+      "slug": "detention",
+      "image": "https://media.rawg.io/media/games/d96/d966fbdebcb904af63980842b37c31c9.jpg",
+      "released": "2017-01-12",
+      "user_rating": 0,
+      "global_rating": 4.1,
+      "metacritic": 83,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 385420,
+      "title": "The Drifter",
+      "slug": "the-drifter",
+      "image": "https://media.rawg.io/media/games/41c/41cc9e095b628fa21a7066133d3c8b22.jpg",
+      "released": "2025-07-17",
+      "user_rating": 0,
+      "global_rating": 4.3,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 982005,
+      "title": "Lorelei and the Laser Eyes",
+      "slug": "lorelei-and-the-laser-eyes",
+      "image": "https://media.rawg.io/media/games/b99/b997807690f810fa4cd7156fa61489f6.jpg",
+      "released": "2024-05-16",
+      "user_rating": 0,
+      "global_rating": 4.5,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 455580,
+      "title": "Anno: Mutationem",
+      "slug": "anno-mutationem",
+      "image": "https://media.rawg.io/media/games/b1d/b1d0b2d6b4cbc94d8c2066353367d13e.jpg",
+      "released": "2022-03-16",
+      "user_rating": 0,
+      "global_rating": 3.52,
+      "metacritic": 73,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 968792,
+      "title": "This Bed We Made",
+      "slug": "this-bed-we-made",
+      "image": "https://media.rawg.io/media/screenshots/fe5/fe5b87d8e1859c6e1d9b99eb88f6ebfe.jpg",
+      "released": "2023-11-01",
+      "user_rating": 0,
+      "global_rating": 4.21,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 840855,
+      "title": "I Was a Teenage Exocolonist",
+      "slug": "i-was-a-teenage-exocolonist",
+      "image": "https://media.rawg.io/media/games/6b3/6b3e333fd648be0c606a2cf6aca59acc.jpg",
+      "released": "2022-08-24",
+      "user_rating": 0,
+      "global_rating": 4.33,
+      "metacritic": null,
+      "genres": [
+        "RPG",
+        "Simulation"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 984119,
+      "title": "Dystopika",
+      "slug": "dystopika",
+      "image": "https://media.rawg.io/media/screenshots/cd6/cd6e187eda4ed8383f2b58d5cd524460.jpg",
+      "released": "2024-06-20",
+      "user_rating": 0,
+      "global_rating": 0.0,
+      "metacritic": null,
+      "genres": [
+        "Strategy",
+        "Simulation"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 787775,
+      "title": "The Pale Beyond",
+      "slug": "the-pale-beyond",
+      "image": "https://media.rawg.io/media/games/3b6/3b6e0d530099eae5a4a68cf3c5116ed7.jpg",
+      "released": "2023-02-24",
+      "user_rating": 0,
+      "global_rating": 3.27,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 61409,
+      "title": "Heaven Will Be Mine",
+      "slug": "heaven-will-be-mine",
+      "image": "https://media.rawg.io/media/screenshots/ed0/ed0b217670fcf7da3a9647b74f885af9.jpg",
+      "released": "2018-07-25",
+      "user_rating": 0,
+      "global_rating": 3.69,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    },
+    {
+      "id": 981113,
+      "title": "Let Bions Be Bygones",
+      "slug": "let-bions-be-bygones",
+      "image": "https://media.rawg.io/media/screenshots/d5b/d5b4ddcf127ec1148a840a9604e0bb5e.jpg",
+      "released": "2024-04-30",
+      "user_rating": 0,
+      "global_rating": 0.0,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "yet"
+    }
+  ],
+  "dropped": [
+    {
+      "id": 13627,
+      "title": "Undertale",
+      "slug": "undertale",
+      "image": "https://media.rawg.io/media/games/ffe/ffed87105b14f5beff72ff44a7793fd5.jpg",
+      "released": "2015-09-14",
+      "user_rating": 0,
+      "global_rating": 4.35,
+      "metacritic": 92,
+      "genres": [
+        "RPG",
+        "Indie"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 28,
+      "title": "Red Dead Redemption 2",
+      "slug": "red-dead-redemption-2",
+      "image": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+      "released": "2018-10-26",
+      "user_rating": 0,
+      "global_rating": 4.59,
+      "metacritic": 96,
+      "genres": [
+        "Action"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 980502,
+      "title": "Kingdom Come: Deliverance II",
+      "slug": "kingdom-come-deliverance-ii",
+      "image": "https://media.rawg.io/media/games/d84/d842fec4ae7bbd782d330f678c980f7f.jpg",
+      "released": "2025-02-03",
+      "user_rating": 0,
+      "global_rating": 4.4,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 58779,
+      "title": "Starfield",
+      "slug": "starfield",
+      "image": "https://media.rawg.io/media/games/ba8/ba82c971336adfd290e4c0eab6504fcf.jpg",
+      "released": "2023-09-06",
+      "user_rating": 0,
+      "global_rating": 3.25,
+      "metacritic": 88,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 455597,
+      "title": "It Takes Two",
+      "slug": "it-takes-two-2",
+      "image": "https://media.rawg.io/media/games/d47/d479582ed0a46496ad34f65c7099d7e5.jpg",
+      "released": "2021-03-26",
+      "user_rating": 0,
+      "global_rating": 4.47,
+      "metacritic": 88,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 2093,
+      "title": "No Man's Sky",
+      "slug": "no-mans-sky",
+      "image": "https://media.rawg.io/media/games/174/1743b3dd185bda4a7be349347d4064df.jpg",
+      "released": "2016-08-09",
+      "user_rating": 0,
+      "global_rating": 3.71,
+      "metacritic": 75,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 802,
+      "title": "Borderlands 2",
+      "slug": "borderlands-2",
+      "image": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg",
+      "released": "2012-09-18",
+      "user_rating": 0,
+      "global_rating": 4.01,
+      "metacritic": 89,
+      "genres": [
+        "Action",
+        "Shooter"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 3439,
+      "title": "Life is Strange",
+      "slug": "life-is-strange-episode-1-2",
+      "image": "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg",
+      "released": "2015-01-29",
+      "user_rating": 0,
+      "global_rating": 4.12,
+      "metacritic": 83,
+      "genres": [
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 324997,
+      "title": "Baldur's Gate III",
+      "slug": "baldurs-gate-3",
+      "image": "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg",
+      "released": "2023-08-03",
+      "user_rating": 0,
+      "global_rating": 4.44,
+      "metacritic": 97,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 29236,
+      "title": "Tunic",
+      "slug": "tunic",
+      "image": "https://media.rawg.io/media/games/2c1/2c1984e128ac48b89953ed4de4904a3b.jpg",
+      "released": "2022-03-16",
+      "user_rating": 0,
+      "global_rating": 4.11,
+      "metacritic": 86,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 42,
+      "title": "What Remains of Edith Finch",
+      "slug": "what-remains-of-edith-finch",
+      "image": "https://media.rawg.io/media/games/34e/34e100b1f648de99f32d477065f04653.jpg",
+      "released": "2017-04-23",
+      "user_rating": 0,
+      "global_rating": 4.38,
+      "metacritic": 89,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 894438,
+      "title": "Lil Gator Game",
+      "slug": "lil-gator-game",
+      "image": "https://media.rawg.io/media/games/376/37628262db021ad21f81ec8d4b0ded03.jpg",
+      "released": "2022-12-14",
+      "user_rating": 0,
+      "global_rating": 4.2,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 12569,
+      "title": "Starbound",
+      "slug": "starbound",
+      "image": "https://media.rawg.io/media/games/6d9/6d92d50affeebf2eb3894d178eb1117e.jpg",
+      "released": "2016-07-22",
+      "user_rating": 0,
+      "global_rating": 3.82,
+      "metacritic": 81,
+      "genres": [
+        "Action",
+        "RPG"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 783856,
+      "title": "Animal Well",
+      "slug": "animal-well",
+      "image": "https://media.rawg.io/media/games/f0a/f0ae5322f985cda91e871adcfcb91f6f.jpg",
+      "released": "2024-05-09",
+      "user_rating": 0,
+      "global_rating": 4.24,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 46508,
+      "title": "Return Of The Obra Dinn",
+      "slug": "return-of-the-obra-dinn",
+      "image": "https://media.rawg.io/media/games/052/052f9afc7aaeea3e2c5d46eafa92c64e.jpg",
+      "released": "2018-10-17",
+      "user_rating": 0,
+      "global_rating": 4.33,
+      "metacritic": 88,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 10419,
+      "title": "Subnautica",
+      "slug": "subnautica",
+      "image": "https://media.rawg.io/media/games/739/73990e3ec9f43a9e8ecafe207fa4f368.jpg",
+      "released": "2018-01-23",
+      "user_rating": 0,
+      "global_rating": 4.24,
+      "metacritic": 83,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 3268,
+      "title": "The Vanishing of Ethan Carter",
+      "slug": "the-vanishing-of-ethan-carter",
+      "image": "https://media.rawg.io/media/games/90c/90caf1fcb836cad70013452f6f239008.jpg",
+      "released": "2014-09-25",
+      "user_rating": 0,
+      "global_rating": 3.76,
+      "metacritic": 82,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 482921,
+      "title": "Little Witch in the Woods",
+      "slug": "little-witch-in-the-woods",
+      "image": "https://media.rawg.io/media/screenshots/0dc/0dc90b6b34c4966f50f8831ee433eca5.jpg",
+      "released": "2025-09-15",
+      "user_rating": 0,
+      "global_rating": 3.64,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "RPG"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 722688,
+      "title": "Strange Horticulture",
+      "slug": "strange-horticulture",
+      "image": "https://media.rawg.io/media/games/add/add2aecd96e74df7e27082328039957e.jpg",
+      "released": "2022-01-20",
+      "user_rating": 0,
+      "global_rating": 4.01,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Simulation"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 50839,
+      "title": "Baba Is You",
+      "slug": "baba-is-you",
+      "image": "https://media.rawg.io/media/games/0bc/0bca854021e14ffa9005a85c4567d25c.jpg",
+      "released": "2019-03-13",
+      "user_rating": 0,
+      "global_rating": 4.39,
+      "metacritic": 86,
+      "genres": [
+        "Indie",
+        "Puzzle"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 17013,
+      "title": "Lucius",
+      "slug": "lucius",
+      "image": "https://media.rawg.io/media/games/679/67900b47263413bd65fc0032ad966e0b.jpg",
+      "released": "2012-10-25",
+      "user_rating": 0,
+      "global_rating": 3.14,
+      "metacritic": 59,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 59796,
+      "title": "Coffee Talk",
+      "slug": "coffee-talk",
+      "image": "https://media.rawg.io/media/games/4d9/4d90960bbb1c92966b8ec7a4f11864a7.jpg",
+      "released": "2020-01-28",
+      "user_rating": 0,
+      "global_rating": 3.83,
+      "metacritic": 74,
+      "genres": [
+        "Casual",
+        "Indie"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 977750,
+      "title": "Minami Lane",
+      "slug": "minami-lane",
+      "image": "https://media.rawg.io/media/screenshots/314/3145a69512a9761f821a0072b1ec9193.jpg",
+      "released": "2024-02-28",
+      "user_rating": 0,
+      "global_rating": 3.5,
+      "metacritic": null,
+      "genres": [
+        "Strategy",
+        "Simulation"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 1010666,
+      "title": "Voyagers of Nera",
+      "slug": "voyagers-of-nera",
+      "image": "https://media.rawg.io/media/screenshots/92b/92b9ab37eb963ed05fe3aaa40788add4.jpg",
+      "released": "2025-09-16",
+      "user_rating": 0,
+      "global_rating": 0.0,
+      "metacritic": null,
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 1008603,
+      "title": "Out and About",
+      "slug": "out-and-about",
+      "image": "https://media.rawg.io/media/screenshots/8c4/8c42e84d3bb5113865a346780738ad44.jpg",
+      "released": "2025-08-11",
+      "user_rating": 0,
+      "global_rating": 0.0,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Simulation"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 15265,
+      "title": "Gone In November",
+      "slug": "gone-in-november",
+      "image": "https://media.rawg.io/media/screenshots/dd2/dd2aebf3840992f381a2f6f97807c76d.jpg",
+      "released": "2016-08-18",
+      "user_rating": 0,
+      "global_rating": 1.5,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "dropped"
+    },
+    {
+      "id": 14647,
+      "title": "Electric Highways",
+      "slug": "electric-highways",
+      "image": "https://media.rawg.io/media/screenshots/4f6/4f62f75550c18f82dd69dcf0722eb25a.jpg",
+      "released": "2015-10-28",
+      "user_rating": 0,
+      "global_rating": 3.22,
+      "metacritic": null,
+      "genres": [
+        "Adventure",
+        "Indie"
+      ],
+      "status": "dropped"
+    }
+  ]
+}
