@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Using a joystick favicon if you have one, otherwise standard -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='6' width='20' height='12' rx='2'></rect><path d='M6 12h4m-2-2v4m9-2h2m-1-1h.01'></path></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arseni's Game Library</title>
+    <script type="module" crossorigin src="/assets/games-DlmY380b.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="/assets/blog-styles-COSRXTVO.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="nav-left">
+        <a href="index.html" class="back-button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Home
+        </a>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle-button">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </div>
+
+    <div class="blog-container">
+      <div class="sidebar">
+        <h2>Library Stats</h2>
+        <div id="game-stats">
+          <p>Loading stats...</p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <h2>Sort By</h2>
+          <div class="sort-controls">
+            <button id="sort-rating" class="sort-btn active">My Rating</button>
+            <button id="sort-recent" class="sort-btn">Recently Updated</button>
+            <button id="sort-released" class="sort-btn">Release Date</button>
+          </div>
+        </div>
+        
+        <div class="sidebar-note" style="margin-top: 2rem; font-size: 0.9em; color: var(--text-color-light);">
+          <p>A rating of 5 means I loved the game, 4 is great, 3 usually I drop before I finish so they don't make this list.</p>
+        </div>
+      </div>
+
+      <main class="blog-content">
+        <h1>Game Library</h1>
+        <p>Games I have played. There is also a good amount of games I have dropped, they are not on the list.</p>
+        
+        <div id="games-container">
+          <div class="loading-indicator">Loading games...</div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+       const toggleBtn = document.getElementById('theme-toggle');
+       const html = document.documentElement;
+       const savedTheme = localStorage.getItem('theme') || 'light';
+       html.setAttribute('data-theme', savedTheme);
+
+       toggleBtn.addEventListener('click', () => {
+         const currentTheme = html.getAttribute('data-theme');
+         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+         html.setAttribute('data-theme', newTheme);
+         localStorage.setItem('theme', newTheme);
+       });
+    </script>
+  </body>
+</html>
