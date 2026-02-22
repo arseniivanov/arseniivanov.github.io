@@ -68,5 +68,12 @@
     "date": "January 21, 2026",
     "id": "nvidia-gemm",
     "tags": ["Neural Networks", "Compute", "Optimization"]
+  },
+  {
+    "file": "2026-02-22-groupedgemm.md",
+    "title": "Grouped GEMM Programming Challenge",
+    "date": "February 22, 2026",
+    "id": "grouped-gemm",
+    "tags": ["Neural Networks", "Compute", "Optimization"]
   }
 ]
