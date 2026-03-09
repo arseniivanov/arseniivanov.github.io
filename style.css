@@ -14,16 +14,15 @@
 }
 
 main {
-  width: 100vw;
   color: white;
   z-index: 99;
   position: absolute;
   width: 100%;
   margin: 0px auto;
   padding: 120px 0px;
-  
+
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 60px repeat(11, 1fr);
 }
 
 h1, h2, h3, blockquote {
@@ -248,10 +247,14 @@ blockquote p {
   .side-menu {
     width: 200px; /* Expanded by default on large screens */
   }
-  
+
   .side-menu .menu-item span {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  main {
+    grid-template-columns: 200px repeat(11, 1fr);
   }
 }
 
