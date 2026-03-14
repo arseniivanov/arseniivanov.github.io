@@ -75,5 +75,12 @@
     "date": "February 22, 2026",
     "id": "grouped-gemm",
     "tags": ["Neural Networks", "Compute", "Optimization"]
+  },
+  {
+    "file": "2026-03-14-llmpsych.md",
+    "title": "Vibe-coded research and LLM-induced psychosis",
+    "date": "March 14, 2026",
+    "id": "llm-psychosis",
+    "tags": ["LLM", "Society", "Education"]
   }
 ]
