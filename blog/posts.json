@@ -82,5 +82,12 @@
     "date": "March 14, 2026",
     "id": "llm-psychosis",
     "tags": ["LLM", "Society", "Education"]
+  },
+  {
+    "file": "2026-04-01-flydsl.md",
+    "title": "Using AMD FlyDSL for the MXFP4 GEMM on MI355X GPU",
+    "date": "April 1, 2026",
+    "id": "flydsl",
+    "tags": ["Compute", "Neural Networks"]
   }
 ]
