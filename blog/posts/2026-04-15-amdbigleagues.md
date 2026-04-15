@@ -62,6 +62,9 @@ I chose the first approach, and made Claude Code to improve my final kernel at t
 The other thing, which is a million dollar question companies such as [Standard Kernel](https://standardkernel.com/), [Wafer](https://www.ycombinator.com/companies/wafer) and other GPU-kernel-generation-companies are trying to construct is how to build the harness and context for the LLMs in question. How do you ensure that the model has access to documentation, prototype kernels in order to aid generation? Is it necessary to provide all of this context, or can they perhaps find all of it online themselves? 
 Also, how do you construct an environment and target for a problem that is not easily reward-hacked?
 
+I also think that this is interesting in what this means for AMD software ecosystem. We can see that plenty of the solutions, including mine, are written in Triton. The winning solutions are mostly written in Triton, or calls to existing parts of AITER/FLYDSL. Triton has a much broader data distribution than HIP. LLMs and Agentic models will default to solving the problem with the most commonly used way, which happens to be Triton unless you specifically tell it to do otherwise. Compare this to NVIDIA competitions where there is no way that a Triton solution will get even close to the SOL. All the solutions there are written in CUDA or CuteDSL.
+What does this mean for the AMD ecosystem? Perhaps AMD will need to invest in having the best transpilers from GPGPU languages to their backend ISA. How can you close a software moat when the tools that write the code are pushing the users to use more general solutions?
+
 Finally, I think that it's possible to sometimes forget this when participating in competitions like this, but GPU kernels are a **means to an end**. We are optimizing GPU kernels in order to make tasks like LLMs, or image generation, or some scientific computing run faster. Going full-out and investing everything into learning GPU kernel development in order to get a 300k$ salary will probably not be possible in some years for most of the reasons named earlier in this blog. It's an ideal problem to iterate on with clear objectives. It's arguably harder to make a successful website for a product with LLMs if you think about this from this perspective, because you need to keep in mind how users interact, which is an ambiguous objective. If I have any advice to anyone in the field reading this, it's to think about **what** you are optimizing over the optimization itself. GPU kernels are a fantastic toolkit, but they will not be the bottleneck for most problems.
 
 ---
@@ -97,7 +100,7 @@ FlyDSL:
 ⚡ 550 µs 🐌 984 µs  
 ⚡ 608 µs 🐌 1059 µs  
 ⚡ 561 µs 🐌 973 µs  
-⚡ 554 µs 🐌 2.40 ms
+⚡ 554 µs 🐌 2.40 ms  
 ⚡ 566 µs 🐌 1079 µs  
 ⚡ 601 µs 🐌 973 µs  
 
