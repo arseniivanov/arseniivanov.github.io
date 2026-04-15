@@ -89,5 +89,12 @@
     "date": "April 1, 2026",
     "id": "flydsl",
     "tags": ["Compute", "Neural Networks"]
+  },
+  {
+    "file": "2026-04-15-amdbigleagues.md",
+    "title": "AMD MI355X 1.1M$ Competition Takeaways",
+    "date": "April 15, 2026",
+    "id": "amd-big-leagues",
+    "tags": ["Compute", "Neural Networks", "GPGPU"]
   }
 ]
