@@ -62,6 +62,8 @@ I chose the first approach, and made Claude Code to improve my final kernel at t
 The other thing, which is a million dollar question companies such as [Standard Kernel](https://standardkernel.com/), [Wafer](https://www.ycombinator.com/companies/wafer) and other GPU-kernel-generation-companies are trying to construct is how to build the harness and context for the LLMs in question. How do you ensure that the model has access to documentation, prototype kernels in order to aid generation? Is it necessary to provide all of this context, or can they perhaps find all of it online themselves? 
 Also, how do you construct an environment and target for a problem that is not easily reward-hacked?
 
+Finally, I think that it's possible to sometimes forget this when participating in competitions like this, but GPU kernels are a **means to an end**. We are optimizing GPU kernels in order to make tasks like LLMs, or image generation, or some scientific computing run faster. Going full-out and investing everything into learning GPU kernel development in order to get a 300k$ salary will probably not be possible in some years for most of the reasons named earlier in this blog. It's an ideal problem to iterate on with clear objectives. It's arguably harder to make a successful website for a product with LLMs if you think about this from this perspective, because you need to keep in mind how users interact, which is an ambiguous objective. If I have any advice to anyone in the field reading this, it's to think about **what** you are optimizing over the optimization itself. GPU kernels are a fantastic toolkit, but they will not be the bottleneck for most problems.
+
 ---
 ## MXFP4 GEMM Kernel Worklog
 
