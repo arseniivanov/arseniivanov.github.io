@@ -78,6 +78,34 @@ const obsidianImageExtension = {
 const myMarked = new Marked();
 myMarked.use({ extensions: [obsidianImageExtension, obsidianLinkExtension] }, markedFootnote());
 
+function renderPost(markdown) {
+  const dropdownMarker = '--DROP-DOWN--';
+  const markerIndex = markdown.indexOf(dropdownMarker);
+
+  if (markerIndex === -1) {
+    return myMarked.parse(markdown);
+  }
+
+  const article = markdown.slice(0, markerIndex);
+  const dropdownContent = markdown
+    .slice(markerIndex + dropdownMarker.length)
+    .split('\n')
+    .map(line => {
+      const trimmedLine = line.trim();
+      if (!trimmedLine || /^\*\*.+\*\*:$/.test(trimmedLine)) return line;
+      return `- ${trimmedLine}`;
+    })
+    .join('\n');
+
+  return `${myMarked.parse(article)}
+    <details class="blog-dropdown">
+      <summary>Blogs that I find meaningful in various fields</summary>
+      <div class="blog-dropdown-content">
+        ${myMarked.parse(dropdownContent)}
+      </div>
+    </details>`;
+}
+
 const themeToggle = document.getElementById('theme-toggle');
 const docElement = document.documentElement;
 
@@ -196,7 +224,7 @@ async function loadPost(postFile) {
     const response = await fetch(`/blog/posts/${postFile}`);
     if (!response.ok) throw new Error(`Could not fetch ${postFile}`);
     const markdown = await response.text();
-    contentContainer.innerHTML = myMarked.parse(markdown);
+    contentContainer.innerHTML = renderPost(markdown);
 
     if (window.innerWidth <= 768 && window.location.hash) {
       contentContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });

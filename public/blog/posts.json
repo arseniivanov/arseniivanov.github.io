@@ -68,5 +68,40 @@
     "date": "January 21, 2026",
     "id": "nvidia-gemm",
     "tags": ["Neural Networks", "Compute", "Optimization"]
+  },
+  {
+    "file": "2026-02-22-groupedgemm.md",
+    "title": "Grouped GEMM Programming Challenge",
+    "date": "February 22, 2026",
+    "id": "grouped-gemm",
+    "tags": ["Neural Networks", "Compute", "Optimization"]
+  },
+  {
+    "file": "2026-03-14-llmpsych.md",
+    "title": "Vibe-coded research and LLM-induced psychosis",
+    "date": "March 14, 2026",
+    "id": "llm-psychosis",
+    "tags": ["LLM", "Society", "Education"]
+  },
+  {
+    "file": "2026-04-01-flydsl.md",
+    "title": "Using AMD FlyDSL for the MXFP4 GEMM on MI355X GPU",
+    "date": "April 1, 2026",
+    "id": "flydsl",
+    "tags": ["Compute", "Neural Networks"]
+  },
+  {
+    "file": "2026-04-15-amdbigleagues.md",
+    "title": "AMD MI355X 1.1M$ Competition Takeaways",
+    "date": "April 15, 2026",
+    "id": "amd-big-leagues",
+    "tags": ["Compute", "Neural Networks", "GPGPU"]
+  },
+  {
+    "file": "2026-08-31-taste.md",
+    "title": "A post-scarcity world (of information)",
+    "date": "August 31, 2026",
+    "id": "taste",
+    "tags": ["Society"]
   }
 ]

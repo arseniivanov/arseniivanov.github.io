@@ -180,6 +180,33 @@ body {
   color: var(--code-text-color);
 }
 
+.blog-dropdown {
+  margin-top: 2rem;
+  border: 1px solid var(--border-color-strong);
+  border-radius: 8px;
+  background-color: var(--card-bg-color);
+}
+
+.blog-dropdown summary {
+  padding: 0.85rem 1rem;
+  color: var(--accent-color-readable);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.blog-dropdown summary:hover {
+  background-color: var(--link-hover-bg);
+}
+
+.blog-dropdown-content {
+  padding: 0 1rem 1rem;
+  overflow-wrap: anywhere;
+}
+
+.blog-dropdown-content p:last-child {
+  margin-bottom: 0;
+}
+
 /* --- Responsive design for smaller screens --- */
 @media (max-width: 768px) {
   .blog-container {
