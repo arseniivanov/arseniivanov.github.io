@@ -96,5 +96,12 @@
     "date": "April 15, 2026",
     "id": "amd-big-leagues",
     "tags": ["Compute", "Neural Networks", "GPGPU"]
+  },
+  {
+    "file": "2026-08-31-taste.md",
+    "title": "A post-scarcity world (of information)",
+    "date": "August 31, 2026",
+    "id": "taste",
+    "tags": ["Society"]
   }
 ]

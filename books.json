@@ -1,5 +1,69 @@
 [
   {
+    "title": "Four Thousand Weeks: Time Management for Mortals",
+    "link": "https://www.goodreads.com/review/show/8770086672?utm_medium=api&utm_source=rss",
+    "author": "Oliver Burkeman",
+    "rating": 4,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649313831l/58261060.jpg",
+    "dateRead": 1785639400000
+  },
+  {
+    "title": "Psychopolitics: Neoliberalism and New Technologies of Power",
+    "link": "https://www.goodreads.com/review/show/7617174440?utm_medium=api&utm_source=rss",
+    "author": "Byung-Chul Han",
+    "rating": 3,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1757828699l/37133029.jpg",
+    "dateRead": 1784960443000
+  },
+  {
+    "title": "Local Heavens",
+    "link": "https://www.goodreads.com/review/show/8125653906?utm_medium=api&utm_source=rss",
+    "author": "K.M. Fajardo",
+    "rating": 4,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1741687271l/221244034.jpg",
+    "dateRead": 1784869666000
+  },
+  {
+    "title": "Axiomatic",
+    "link": "https://www.goodreads.com/review/show/7090316809?utm_medium=api&utm_source=rss",
+    "author": "Greg Egan",
+    "rating": 5,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1287341765l/156783.jpg",
+    "dateRead": 1782086400000
+  },
+  {
+    "title": "The New Age of Sexism: How AI and Emerging Technologies Are Reinventing Misogyny",
+    "link": "https://www.goodreads.com/review/show/8125558132?utm_medium=api&utm_source=rss",
+    "author": "Laura Bates",
+    "rating": 4,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760606628l/220481360.jpg",
+    "dateRead": 1781211116000
+  },
+  {
+    "title": "Chokepoints: American Power in the Age of Economic Warfare",
+    "link": "https://www.goodreads.com/review/show/8412941529?utm_medium=api&utm_source=rss",
+    "author": "Edward Fishman",
+    "rating": 5,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1719014875l/213870122.jpg",
+    "dateRead": 1780272000000
+  },
+  {
+    "title": "Breakneck: China's Quest to Engineer the Future",
+    "link": "https://www.goodreads.com/review/show/8209830501?utm_medium=api&utm_source=rss",
+    "author": "Dan  Wang",
+    "rating": 4,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765233885l/223736214.jpg",
+    "dateRead": 1777507200000
+  },
+  {
+    "title": "The Teachings of Don Juan: A Yaqui Way of Knowledge",
+    "link": "https://www.goodreads.com/review/show/8491526078?utm_medium=api&utm_source=rss",
+    "author": "Carlos Castaneda",
+    "rating": 0,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388266931l/78250.jpg",
+    "dateRead": 1775217102000
+  },
+  {
     "title": "Shark's Fin and Sichuan Pepper: A Sweet-Sour Memoir of Eating in China",
     "link": "https://www.goodreads.com/review/show/7766986986?utm_medium=api&utm_source=rss",
     "author": "Fuchsia Dunlop",
@@ -24,7 +88,7 @@
     "dateRead": 1769638523000
   },
   {
-    "title": "The Hitchhiker’s Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)",
+    "title": "The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)",
     "link": "https://www.goodreads.com/review/show/8232430464?utm_medium=api&utm_source=rss",
     "author": "Douglas Adams",
     "rating": 4,
@@ -260,7 +324,7 @@
     "link": "https://www.goodreads.com/review/show/6071974279?utm_medium=api&utm_source=rss",
     "author": "Olga Tokarczuk",
     "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1565725457l/51648276SY75_.jpg",
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1786711459l/51648276.jpg",
     "dateRead": 1703316636000
   },
   {
