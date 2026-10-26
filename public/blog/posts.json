@@ -103,5 +103,12 @@
     "date": "August 31, 2026",
     "id": "taste",
     "tags": ["Society"]
+  },
+  {
+    "file": "2026-09-12-research-incentives.md",
+    "title": "Research Incentives",
+    "date": "September 12, 2026",
+    "id": "reserach-incentives",
+    "tags": ["Society"]
   }
 ]
