@@ -115,6 +115,13 @@ body {
   margin-top: 0;
 }
 
+.blog-disclaimer {
+  margin: 0 0 2rem;
+  color: var(--text-color-light);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 #archive-links .year-section h3 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
