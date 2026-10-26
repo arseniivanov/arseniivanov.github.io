@@ -1,9 +1,9 @@
 # Benchmarking, validation, reward hacking and the PyTorch conference
 
-This week I was at the PyTorch conference in San Jose. It was a great week of good talks and more importantly meeting up with old acquaintances I had only previously known online, and new friends. 
-When walking through the main conference area, I was kind of befuddled by the amount of ML inference providers. There were about 20 booths with companies that were flaunting SOTA inference and 1.5x, 2x, 2.5x, 5x speedups over baseline performance on heterogeneous hardware.
+This week I was at the PyTorch conference in San Jose. It was a great week of good talks and more importantly meeting up with old acquaintances I had only previously known online, as well as new friends.
+When walking through the main conference area, I was kind of befuddled by the amount of ML inference providers. There were about 20 booths with companies that were advertising SOTA inference and 1.5x, 2x, 2.5x, 5x speedups over baseline performance on heterogeneous hardware.
 
-While I understand that a lot of this is sales, I was quite confused. Let's say I was in the business of getting an impression from any of these companies, I would receive absolutely 0 signal from this. Maybe there should have been an H200 with a big screen above it in the room running every vendors solutions in order to establish who actually has SOTA perf and which number is not fully reward-hacked.
+While I understand that a lot of this is sales, I was quite confused, who actually has the SOTA perf? Let's say I was in the business of getting an impression from any of these companies, I would receive 0 signal from this. Maybe there should have been an H200 with a big screen above it in the room running every vendors solutions in order to establish who actually has SOTA perf and which numbers are real for some workload.
 
 This got me thinking about benchmarks, evaluations and verification of research which similarly has a verification crisis.
 
