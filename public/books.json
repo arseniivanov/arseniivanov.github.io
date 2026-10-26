@@ -1,5 +1,13 @@
 [
   {
+    "title": "Permutation City",
+    "link": "https://www.goodreads.com/review/show/8770086299?utm_medium=api&utm_source=rss",
+    "author": "Greg Egan",
+    "rating": 4,
+    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1287341300l/156784.jpg",
+    "dateRead": 1792218324000
+  },
+  {
     "title": "Four Thousand Weeks: Time Management for Mortals",
     "link": "https://www.goodreads.com/review/show/8770086672?utm_medium=api&utm_source=rss",
     "author": "Oliver Burkeman",
@@ -88,7 +96,7 @@
     "dateRead": 1769638523000
   },
   {
-    "title": "The Hitchhiker's Guide to the Galaxy (Hitchhiker's Guide to the Galaxy, #1)",
+    "title": "The Hitchhiker's Guide to the Galaxy (The Hitchhiker's Guide to the Galaxy, #1)",
     "link": "https://www.goodreads.com/review/show/8232430464?utm_medium=api&utm_source=rss",
     "author": "Douglas Adams",
     "rating": 4,
