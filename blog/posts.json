@@ -110,5 +110,12 @@
     "date": "September 12, 2026",
     "id": "reserach-incentives",
     "tags": ["Society"]
+  },
+  {
+    "file": "2026-10-26-benchmarking-validation-pytorch.md",
+    "title": "Benchmarking, Validation, Reward hacking, and the PyTorch conference",
+    "date": "October 26, 2026",
+    "id": "benchmarking-validation",
+    "tags": ["Society","Compute","Research"]
   }
 ]
