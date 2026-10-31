@@ -31,6 +31,8 @@ jobs:
         run: node --test scripts/fetch-books.test.js
 
       - name: Run Fetch Script
+        env:
+          HARDCOVER_API_TOKEN: ${{ secrets.HARDCOVER_API_TOKEN }}
         run: node scripts/fetch-books.js
 
       - name: Commit and Push changes

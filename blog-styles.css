@@ -373,6 +373,21 @@ body {
 .star-filled { color: #ffb400; }
 .star-empty { color: #e0e0e0; }
 
+.rating-star {
+  display: inline-block;
+  position: relative;
+  letter-spacing: 0;
+  margin-right: 2px;
+}
+
+.rating-star .star-filled {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .book-title-link {
   text-decoration: none;
   color: var(--text-color);

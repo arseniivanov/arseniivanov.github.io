@@ -1,0 +1,34 @@
+{
+  "data": {
+    "user_books": [
+      {
+        "id": 101,
+        "rating": "4.5",
+        "date_added": "2025-01-01",
+        "last_read_date": "2026-10-29",
+        "book": {
+          "title": "Example & Another Story",
+          "slug": "example-and-another-story",
+          "image": { "url": "https://assets.hardcover.app/example-cover.jpg" },
+          "contributions": [
+            { "author": { "name": "First Author" } },
+            { "author": { "name": "Second Author" } }
+          ]
+        }
+      },
+      {
+        "id": 102,
+        "rating": null,
+        "date_added": "2026-10-01",
+        "last_read_date": null,
+        "book": {
+          "title": "A Book Without a Cover",
+          "slug": "a-book-without-a-cover",
+          "image": null,
+          "contributions": []
+        }
+      }
+    ],
+    "user_books_aggregate": { "aggregate": { "count": 2 } }
+  }
+}

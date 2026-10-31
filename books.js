@@ -1,3 +1,5 @@
+import { escapeHtml, ratingStars } from './books-format.js';
+
 const DATA_SOURCE = 'books.json';
 
 const container = document.getElementById('books-grid');
@@ -51,26 +53,20 @@ function renderBooks(books) {
     const card = document.createElement('div');
     card.className = 'book-card';
     
-    // Create stars string
-    const ratingStars = book.rating > 0 
-      ? '<span class="star-filled">★</span>'.repeat(book.rating) + 
-        '<span class="star-empty">☆</span>'.repeat(5 - book.rating)
-      : '<span class="star-empty" style="font-size:0.8em; color:#ccc">Not rated</span>';
-
-    // We removed the "View on Goodreads" link at the bottom.
-    // The Cover and the Title are now the main click targets.
+    const title = escapeHtml(book.title);
+    const link = escapeHtml(book.link);
     card.innerHTML = `
       <div class="book-cover-container">
-        <a href="${book.link}" target="_blank" class="cover-link" aria-label="View ${book.title} on Goodreads">
-          <img src="${book.coverUrl}" alt="${book.title}" class="book-cover" loading="lazy">
+        <a href="${link}" target="_blank" rel="noopener noreferrer" class="cover-link" aria-label="View ${title}">
+          <img src="${escapeHtml(book.coverUrl)}" alt="${title}" class="book-cover" loading="lazy">
         </a>
       </div>
       <div class="book-info">
-        <div class="book-rating" title="${book.rating}/5">${ratingStars}</div>
-        <a href="${book.link}" target="_blank" class="book-title-link">
-            <h3 class="book-title">${book.title}</h3>
+        <div class="book-rating" title="${book.rating}/5" aria-label="${book.rating ? `${book.rating} out of 5 stars` : 'Not rated'}">${ratingStars(book.rating)}</div>
+        <a href="${link}" target="_blank" rel="noopener noreferrer" class="book-title-link">
+            <h3 class="book-title">${title}</h3>
         </a>
-        <div class="book-author">by ${book.author}</div>
+        <div class="book-author">by ${escapeHtml(book.author)}</div>
       </div>
     `;
 
