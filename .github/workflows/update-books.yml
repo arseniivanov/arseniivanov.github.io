@@ -11,21 +11,27 @@ permissions:
 
 jobs:
   update-books:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '18'
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test Fetch Script
+        run: node --test scripts/fetch-books.test.js
 
       - name: Run Fetch Script
         run: node scripts/fetch-books.js
 
       - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "🤖 Auto-update books.json"
           file_pattern: public/books.json

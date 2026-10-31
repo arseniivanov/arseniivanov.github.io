@@ -39,7 +39,7 @@ function handleSort(criteria) {
   } else {
     btnRating.classList.remove('active');
     btnDate.classList.add('active');
-    libraryData.sort((a, b) => b.dateRead - a.dateRead);
+    libraryData.sort((a, b) => (b.dateRead || b.dateAdded || 0) - (a.dateRead || a.dateAdded || 0));
   }
   renderBooks(libraryData);
 }
