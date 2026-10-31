@@ -33,7 +33,7 @@ const BOOKS_QUERY = `
   }
 `;
 
-async function queryApi(query, variables, { token, fetchImpl = fetch, wait = delay }) {
+async function queryApi(query, variables, { token, fetchImpl = fetch, wait = delay, logger = console }) {
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const response = await fetchImpl(API_URL, {
@@ -62,7 +62,7 @@ async function queryApi(query, variables, { token, fetchImpl = fetch, wait = del
     } catch (error) {
       if (error.permanent || attempt === 3) throw error;
       // Do not log remote response bodies or request headers containing the token.
-      console.warn(`Hardcover request failed (attempt ${attempt}/3). Retrying...`);
+      logger.warn(`Hardcover request failed (attempt ${attempt}/3). Retrying...`);
       await wait(attempt * 2_000);
     }
   }
@@ -161,11 +161,11 @@ function readSavedBooks(outputPath) {
   return [];
 }
 
-export async function updateBooks({ outputPath = OUTPUT_PATH, ...options } = {}) {
+export async function updateBooks({ outputPath = OUTPUT_PATH, logger = console, ...options } = {}) {
   let books;
   try {
-    console.log('Fetching public read books from Hardcover...');
-    books = await fetchBooks(options);
+    logger.log('Fetching public read books from Hardcover...');
+    books = await fetchBooks({ ...options, logger });
   } catch (error) {
     if (error.permanent) throw error;
     const saved = readSavedBooks(outputPath);
@@ -173,9 +173,9 @@ export async function updateBooks({ outputPath = OUTPUT_PATH, ...options } = {})
     const message = `${error.message}. Hardcover update skipped; retained ${saved.length} saved books.`;
     if (process.env.GITHUB_ACTIONS === 'true') {
       const escaped = message.replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A');
-      console.warn(`::warning::${escaped}`);
+      logger.warn(`::warning::${escaped}`);
     } else {
-      console.warn(message);
+      logger.warn(message);
     }
     return;
   }
@@ -183,7 +183,7 @@ export async function updateBooks({ outputPath = OUTPUT_PATH, ...options } = {})
   const temporaryPath = `${outputPath}.tmp`;
   fs.writeFileSync(temporaryPath, JSON.stringify(books, null, 2));
   fs.renameSync(temporaryPath, outputPath);
-  console.log(`Successfully saved ${books.length} Hardcover books to ${outputPath}`);
+  logger.log(`Successfully saved ${books.length} Hardcover books to ${outputPath}`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

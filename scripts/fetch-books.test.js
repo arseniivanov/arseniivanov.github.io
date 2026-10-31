@@ -3,8 +3,13 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { test } from 'node:test';
-import { fetchBooks, parseBook, updateBooks } from './fetch-books.js';
+import { fetchBooks as fetchBooksImpl, parseBook, updateBooks as updateBooksImpl } from './fetch-books.js';
 import { escapeHtml, ratingStars } from '../books-format.js';
+
+// Capture simulated failures instead of sending workflow commands to the runner.
+const quietLogger = { log() {}, warn() {} };
+const fetchBooks = options => fetchBooksImpl({ logger: quietLogger, ...options });
+const updateBooks = options => updateBooksImpl({ logger: quietLogger, ...options });
 
 // Representative responses based on Hardcover's documented GraphQL schema.
 const fixture = JSON.parse(fs.readFileSync(new URL('./fixtures/hardcover-read-books.json', import.meta.url)));
@@ -212,4 +217,19 @@ test('renders five stars with a half-filled star for 4.5 without rounding the ra
   assert.equal((markup.match(/width:50%/g) || []).length, 1);
   assert.match(ratingStars(0), /Not rated/);
   assert.equal(escapeHtml('A & B <book> "quote"'), 'A &amp; B &lt;book&gt; &quot;quote&quot;');
+});
+
+test('real sync warnings remain enabled while tests capture their output', async t => {
+  const outputPath = savedShelf(t);
+  const warnings = [];
+  await updateBooksImpl({
+    outputPath, token, wait: noWait,
+    logger: { log() {}, warn(message) { warnings.push(message); } },
+    fetchImpl: async () => new Response('', { status: 503 }),
+  });
+  assert.equal(warnings.length, 3);
+  assert.match(warnings[2], /retained 2 saved books/);
+  if (process.env.GITHUB_ACTIONS === 'true') {
+    assert.match(warnings[2], /^::warning::/);
+  }
 });

@@ -25,9 +25,6 @@ jobs:
         run: npm ci
 
       - name: Test Fetch Script
-        env:
-          # Simulated failures should not create GitHub warning annotations.
-          GITHUB_ACTIONS: 'false'
         run: node --test scripts/fetch-books.test.js
 
       - name: Run Fetch Script
