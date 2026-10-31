@@ -1,402 +1,452 @@
 [
   {
-    "title": "Axiomatic",
-    "link": "https://www.goodreads.com/review/show/7090316809",
-    "author": "Greg Egan",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1287341765l/156783.jpg",
-    "dateRead": 1782086400000
-  },
-  {
-    "title": "Chokepoints: American Power in the Age of Economic Warfare",
-    "link": "https://www.goodreads.com/review/show/8412941529",
-    "author": "Edward Fishman",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1719014875l/213870122.jpg",
-    "dateRead": 1780272000000
-  },
-  {
-    "title": "Breakneck: China's Quest to Engineer the Future",
-    "link": "https://www.goodreads.com/review/show/8209830501",
-    "author": "Dan  Wang",
+    "title": "The Hitchhiker's Guide to the Galaxy",
+    "link": "https://hardcover.app/books/the-hitchhikers-guide-to-the-galaxy",
+    "author": "Douglas Adams",
     "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1765233885l/223736214.jpg",
-    "dateRead": 1777507200000
-  },
-  {
-    "title": "Thinking, Fast and Slow",
-    "link": "https://www.goodreads.com/review/show/6470915354",
-    "author": "Daniel Kahneman",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1317793965l/11468377.jpg",
-    "dateRead": 1751846400000
-  },
-  {
-    "title": "The Maniac",
-    "link": "https://www.goodreads.com/review/show/7600083138",
-    "author": "Benjamín Labatut",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1679411721l/75665931.jpg",
-    "dateRead": 1749859200000
-  },
-  {
-    "title": "The Information: A History, a Theory, a Flood",
-    "link": "https://www.goodreads.com/review/show/6470919156",
-    "author": "James Gleick",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348046486l/8701960.jpg",
-    "dateRead": 1742169600000
-  },
-  {
-    "title": "Chaos: Making a New Science",
-    "link": "https://www.goodreads.com/review/show/6915896379",
-    "author": "James Gleick",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1327941595l/64582.jpg",
-    "dateRead": 1741651200000
+    "coverUrl": "https://assets.hardcover.app/edition/21490281/d9b48333ac7a69ebe0aa5573fe0ff032e6f97508.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1767657600000
   },
   {
     "title": "The Worlds I See: Curiosity, Exploration, and Discovery at the Dawn of AI",
-    "link": "https://www.goodreads.com/review/show/6683025739",
+    "link": "https://hardcover.app/books/the-worlds-i-see-curiosity-exploration-and-discovery-at-the-dawn-of-ai",
     "author": "Fei-Fei Li",
     "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1682738725l/144405196.jpg",
-    "dateRead": 1728172800000
+    "coverUrl": "https://assets.hardcover.app/external_data/61311950/8a364d8fb20ed2ca79387c5485c1c864b5e52096.jpeg",
+    "dateRead": 1728172800000,
+    "dateAdded": 1721347200000
   },
   {
-    "title": "Co-Intelligence: Living and Working with AI",
-    "link": "https://www.goodreads.com/review/show/6514827166",
-    "author": "Ethan Mollick",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1709537279l/198678736.jpg",
-    "dateRead": 1727136000000
+    "title": "Thinking, Fast and Slow",
+    "link": "https://hardcover.app/books/thinking-fast-and-slow",
+    "author": "Daniel Kahneman",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30399502/f9f5def53c01af8389068e12f25b8c1d603bb5b9.jpeg",
+    "dateRead": 1751846400000,
+    "dateAdded": 1714435200000
   },
   {
-    "title": "The Order of Time",
-    "link": "https://www.goodreads.com/review/show/6784844692",
-    "author": "Carlo Rovelli",
+    "title": "Axiomatic",
+    "link": "https://hardcover.app/books/axiomatic",
+    "author": "Greg Egan",
     "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1516424407l/36442813.jpg",
-    "dateRead": 1726876800000
+    "coverUrl": "https://assets.hardcover.app/external_data/35466317/685e73d04d05cff4d914b2752ef3b75c0b270af7.jpeg",
+    "dateRead": 1782086400000,
+    "dateAdded": 1734307200000
   },
   {
-    "title": "Nexus (Nexus, #1)",
-    "link": "https://www.goodreads.com/review/show/6071977293",
+    "title": "Nexus",
+    "link": "https://hardcover.app/books/nexus",
     "author": "Ramez Naam",
     "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347149654l/13642710.jpg",
-    "dateRead": 1726099200000
-  },
-  {
-    "title": "Exhalation",
-    "link": "https://www.goodreads.com/review/show/6415540890",
-    "author": "Ted Chiang",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1534388394l/41160292.jpg",
-    "dateRead": 1725062400000
-  },
-  {
-    "title": "The Biggest Ideas in the Universe 2: Quanta and Fields",
-    "link": "https://www.goodreads.com/review/show/6471635455",
-    "author": "Sean Carroll",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1719784976l/203646965.jpg",
-    "dateRead": 1723420800000
-  },
-  {
-    "title": "Project Hail Mary",
-    "link": "https://www.goodreads.com/review/show/6071977745",
-    "author": "Andy Weir",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1764703833l/54493401.jpg",
-    "dateRead": 1711238400000
-  },
-  {
-    "title": "The Biggest Ideas in the Universe: Space, Time, and Motion",
-    "link": "https://www.goodreads.com/review/show/6071978887",
-    "author": "Sean Carroll",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649651692l/57933599.jpg",
-    "dateRead": 1709942400000
-  },
-  {
-    "title": "Atlas of the Heart: Mapping Meaningful Connection and the Language of Human Experience",
-    "link": "https://www.goodreads.com/review/show/6071976966",
-    "author": "Brené Brown",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1630947399l/58330567.jpg",
-    "dateRead": 1709942400000
-  },
-  {
-    "title": "Of Mice and Men",
-    "link": "https://www.goodreads.com/review/show/6882612033",
-    "author": "John Steinbeck",
-    "rating": 0,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1511302904l/890.jpg",
-    "dateRead": 1727473366000
-  },
-  {
-    "title": "Life, the Universe and Everything (The Hitchhiker's Guide to the Galaxy, #3)",
-    "link": "https://www.goodreads.com/review/show/8348477813",
-    "author": "Douglas Adams",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1333577589l/8694.jpg",
-    "dateRead": 1770761544000
-  },
-  {
-    "title": "Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values (Phaedrus, #1)",
-    "link": "https://www.goodreads.com/review/show/6071982713",
-    "author": "Robert M. Pirsig",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1410136019l/629.jpg",
-    "dateRead": 1703317074000
-  },
-  {
-    "title": "Stories of Your Life and Others",
-    "link": "https://www.goodreads.com/review/show/6071967279",
-    "author": "Ted Chiang",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356138316l/223380.jpg",
-    "dateRead": 1703316273000
-  },
-  {
-    "title": "The Will to Change: Men, Masculinity, and Love",
-    "link": "https://www.goodreads.com/review/show/6288366398",
-    "author": "bell hooks",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1747666075l/17601.jpg",
-    "dateRead": 1708722568000
-  },
-  {
-    "title": "Mating in Captivity: Reconciling the Erotic and the Domestic",
-    "link": "https://www.goodreads.com/review/show/6329055088",
-    "author": "Esther Perel",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432358684l/27485.jpg",
-    "dateRead": 1712426907000
-  },
-  {
-    "title": "Shark's Fin and Sichuan Pepper: A Sweet-Sour Memoir of Eating in China",
-    "link": "https://www.goodreads.com/review/show/7766986986",
-    "author": "Fuchsia Dunlop",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348556111l/2387402.jpg",
-    "dateRead": 1773610696000
+    "coverUrl": "https://assets.hardcover.app/edition/30573290/8b96c504-3441-45f7-a4e1-4cf4e2374e66.jpg",
+    "dateRead": 1726099200000,
+    "dateAdded": 1703203200000
   },
   {
     "title": "Permutation City",
-    "link": "https://www.goodreads.com/review/show/8770086299",
+    "link": "https://hardcover.app/books/permutation-city",
     "author": "Greg Egan",
     "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1287341300l/156784.jpg",
-    "dateRead": 1792218324000
-  },
-  {
-    "title": "The Restaurant at the End of the Universe (The Hitchhiker's Guide to the Galaxy, #2)",
-    "link": "https://www.goodreads.com/review/show/8309596960",
-    "author": "Douglas Adams",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1521213881l/8695.jpg",
-    "dateRead": 1769638523000
-  },
-  {
-    "title": "The Teachings of Don Juan: A Yaqui Way of Knowledge",
-    "link": "https://www.goodreads.com/review/show/8491526078",
-    "author": "Carlos Castaneda",
-    "rating": 0,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388266931l/78250.jpg",
-    "dateRead": 1775217102000
-  },
-  {
-    "title": "The Notebook, The Proof, The Third Lie: Three Novels",
-    "link": "https://www.goodreads.com/review/show/6071972254",
-    "author": "Ágota Kristóf",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1645751761l/230514.jpg",
-    "dateRead": 1703316538000
-  },
-  {
-    "title": "The Hunger Games (The Hunger Games, #1)",
-    "link": "https://www.goodreads.com/review/show/6070980033",
-    "author": "Suzanne Collins",
-    "rating": 2,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722975l/2767052.jpg",
-    "dateRead": 1703283421000
-  },
-  {
-    "title": "The Hitchhiker's Guide to the Galaxy (The Hitchhiker's Guide to the Galaxy, #1)",
-    "link": "https://www.goodreads.com/review/show/8232430464",
-    "author": "Douglas Adams",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1531891848l/11.jpg",
-    "dateRead": 1767738825000
-  },
-  {
-    "title": "Sum: Forty Tales from the Afterlives",
-    "link": "https://www.goodreads.com/review/show/7090296392",
-    "author": "David Eagleman",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320528453l/4948826.jpg",
-    "dateRead": 1753351942000
-  },
-  {
-    "title": "Catching Fire (The Hunger Games, #2)",
-    "link": "https://www.goodreads.com/review/show/6071972741",
-    "author": "Suzanne Collins",
-    "rating": 2,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722941l/6148028.jpg",
-    "dateRead": 1703316561000
-  },
-  {
-    "title": "Drive Your Plow Over the Bones of the Dead",
-    "link": "https://www.goodreads.com/review/show/6071974279",
-    "author": "Olga Tokarczuk",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1786711459l/51648276.jpg",
-    "dateRead": 1703316636000
-  },
-  {
-    "title": "Sapiens: A Brief History of Humankind",
-    "link": "https://www.goodreads.com/review/show/6070972707",
-    "author": "Yuval Noah Harari",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1703329310l/23692271.jpg",
-    "dateRead": 1703283216000
-  },
-  {
-    "title": "The Martian",
-    "link": "https://www.goodreads.com/review/show/6407104510",
-    "author": "Andy Weir",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413706054l/18007564.jpg",
-    "dateRead": 1721393885000
-  },
-  {
-    "title": "Adult Children of Emotionally Immature Parents: How to Heal from Distant, Rejecting, or Self-Involved Parents",
-    "link": "https://www.goodreads.com/review/show/7090429727",
-    "author": "Lindsay C. Gibson",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1427161358l/23129659.jpg",
-    "dateRead": 1754168002000
-  },
-  {
-    "title": "Psychopolitics: Neoliberalism and New Technologies of Power",
-    "link": "https://www.goodreads.com/review/show/7617174440",
-    "author": "Byung-Chul Han",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1757828699l/37133029.jpg",
-    "dateRead": 1784960443000
-  },
-  {
-    "title": "Homo Deus: A History of Tomorrow",
-    "link": "https://www.goodreads.com/review/show/6070976155",
-    "author": "Yuval Noah Harari",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1468760805l/31138556.jpg",
-    "dateRead": 1703283313000
-  },
-  {
-    "title": "The State of Affairs: Rethinking Infidelity",
-    "link": "https://www.goodreads.com/review/show/6329054873",
-    "author": "Esther Perel",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1495687620l/34017010.jpg",
-    "dateRead": 1714315472000
-  },
-  {
-    "title": "Why We Sleep: Unlocking the Power of Sleep and Dreams",
-    "link": "https://www.goodreads.com/review/show/6329112315",
-    "author": "Matthew Walker",
-    "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1556604137l/34466963.jpg",
-    "dateRead": 1721393882000
-  },
-  {
-    "title": "21 Lessons for the 21st Century",
-    "link": "https://www.goodreads.com/review/show/6071969224",
-    "author": "Yuval Noah Harari",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1564577305l/38820046.jpg",
-    "dateRead": 1703316381000
-  },
-  {
-    "title": "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
-    "link": "https://www.goodreads.com/review/show/6070972581",
-    "author": "James Clear",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1655988385l/40121378.jpg",
-    "dateRead": 1703283212000
-  },
-  {
-    "title": "Four Thousand Weeks: Time Management for Mortals",
-    "link": "https://www.goodreads.com/review/show/8770086672",
-    "author": "Oliver Burkeman",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1649313831l/58261060.jpg",
-    "dateRead": 1785639400000
-  },
-  {
-    "title": "The Expectation Effect: How Your Mindset Can Change Your World",
-    "link": "https://www.goodreads.com/review/show/6784906691",
-    "author": "David   Robson",
-    "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1623669374l/57771229.jpg",
-    "dateRead": 1753350789000
-  },
-  {
-    "title": "A Brief History of Intelligence",
-    "link": "https://www.goodreads.com/review/show/6288330135",
-    "author": "Max Solomon Bennett",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1698897472l/201305698.jpg",
-    "dateRead": 1709471394000
+    "coverUrl": "https://assets.hardcover.app/editions/27728606/3a5c7d0e-02b9-49af-8eb7-23680e16e864-permutation.jpg",
+    "dateRead": 0,
+    "dateAdded": 1783987200000
   },
   {
     "title": "Tripping on Utopia: Margaret Mead, the Cold War, and the Troubled Birth of Psychedelic Science",
-    "link": "https://www.goodreads.com/review/show/6329079240",
+    "link": "https://hardcover.app/books/tripping-on-utopia",
     "author": "Benjamin Breen",
     "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1685357634l/145624768.jpg",
-    "dateRead": 1721393876000
+    "coverUrl": "https://assets.hardcover.app/edition/31205458/c41a718b1367f5dbd1d29c4d4e353c61322a4ac9.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1709942400000
+  },
+  {
+    "title": "The Will to Change: Men, Masculinity, and Love",
+    "link": "https://hardcover.app/books/the-will-to-change",
+    "author": "bell hooks",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/1828620/b0b16c64dda386fa23ae7b5e4c3597f2813461a2.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1708646400000
+  },
+  {
+    "title": "The Martian",
+    "link": "https://hardcover.app/books/the-martian",
+    "author": "Andy Weir",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/editions/21716111/5323176149970177.jpg",
+    "dateRead": 0,
+    "dateAdded": 1712361600000
+  },
+  {
+    "title": "Co-Intelligence: Living and Working with AI",
+    "link": "https://hardcover.app/books/co-intelligence",
+    "author": "Ethan Mollick",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/edition/31200843/7bf5e186-c537-45c8-8094-ba1aeaa437b8.jpg",
+    "dateRead": 1727136000000,
+    "dateAdded": 1715990400000
+  },
+  {
+    "title": "A Brief History of Intelligence",
+    "link": "https://hardcover.app/books/a-brief-history-of-intelligence-2023",
+    "author": "Max Solomon Bennett",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/edition/32358425/fb7252f06aa96b701b59db65792a3413b58271e0.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1708646400000
   },
   {
     "title": "Nexus: A Brief History of Information Networks from the Stone Age to AI",
-    "link": "https://www.goodreads.com/review/show/6784881084",
+    "link": "https://hardcover.app/books/nexus-ai",
     "author": "Yuval Noah Harari",
     "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1709986452l/204927599.jpg",
-    "dateRead": 1756568124000
+    "coverUrl": "https://assets.hardcover.app/external_data/61357850/68f1576954c8dfda3fe583db347a4cfe5e1c441e.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1724371200000
+  },
+  {
+    "title": "Chokepoints",
+    "link": "https://hardcover.app/books/chokepoints",
+    "author": "Edward Fishman",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/edition/31822989/9c69d944f3327df6d4b59b2d24f98d083272aec1.jpeg",
+    "dateRead": 1780272000000,
+    "dateAdded": 1772668800000
   },
   {
     "title": "Searches: Selfhood in the Digital Age",
-    "link": "https://www.goodreads.com/review/show/7802513627",
+    "link": "https://hardcover.app/books/searches",
     "author": "Vauhini Vara",
     "rating": 3,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1727496848l/216247514.jpg",
-    "dateRead": 1766659055000
-  },
-  {
-    "title": "Blindsight (Firefall, #1)",
-    "link": "https://www.goodreads.com/review/show/7280095460",
-    "author": "Peter Watts",
-    "rating": 5,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1386924412l/48484.jpg",
-    "dateRead": 1766659102000
+    "coverUrl": "https://assets.hardcover.app/edition/32045234/b12f1b427287aa3b3b1eb8ba51a36a0a0d005313.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1754352000000
   },
   {
     "title": "The New Age of Sexism: How AI and Emerging Technologies Are Reinventing Misogyny",
-    "link": "https://www.goodreads.com/review/show/8125558132",
+    "link": "https://hardcover.app/books/the-new-age-of-sexism",
     "author": "Laura Bates",
     "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760606628l/220481360.jpg",
-    "dateRead": 1781211116000
+    "coverUrl": "https://assets.hardcover.app/edition/32042177/0bdf6ac5-01d5-428a-ad77-5c4edfbaaf63.jpg",
+    "dateRead": 0,
+    "dateAdded": 1764979200000
   },
   {
     "title": "Local Heavens",
-    "link": "https://www.goodreads.com/review/show/8125653906",
+    "link": "https://hardcover.app/books/local-heavens",
     "author": "K.M. Fajardo",
     "rating": 4,
-    "coverUrl": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1741687271l/221244034.jpg",
-    "dateRead": 1784869666000
+    "coverUrl": "https://assets.hardcover.app/edition/31792134/06eada90-6154-4b92-84b1-1cc6c777f13a.jpg",
+    "dateRead": 0,
+    "dateAdded": 1764979200000
+  },
+  {
+    "title": "Stories of Your Life and Others",
+    "link": "https://hardcover.app/books/stories-of-your-life-and-others",
+    "author": "Ted Chiang",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/edition/30448261/e263f538-788c-40fa-8160-73378ca2c00a.jpg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Breakneck: China's Quest to Engineer the Future",
+    "link": "https://hardcover.app/books/breakneck-chinas-quest-to-engineer-the-future",
+    "author": "Dan  Wang",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/32208234/b6201b80-d4bd-4faf-bfb2-e438fecabe19.jpg",
+    "dateRead": 1777507200000,
+    "dateAdded": 1767312000000
+  },
+  {
+    "title": "The Notebook Trilogy",
+    "link": "https://hardcover.app/books/the-notebook-trilogy",
+    "author": "Ágota Kristóf, Alan Sheridan, David Watson",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/book/1276109/92e622a9-22b6-48d4-83d7-4a8dcbdfec44.jpg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Adult Children of Emotionally Immature Parents",
+    "link": "https://hardcover.app/books/adult-children-of-emotionally-immature-parents",
+    "author": "Lindsay C. Gibson",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/external_data/41549765/6c6f7ea22215111389446a672c72de619d8bff21.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1734307200000
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "link": "https://hardcover.app/books/sapiens",
+    "author": "Yuval Noah Harari",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/edition/1014761/175a425a-fb6c-4cb6-afdc-6e1818246f9d.jpg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Shark's Fin and Sichuan Pepper: A Sweet-Sour Memoir of Eating in China",
+    "link": "https://hardcover.app/books/sharks-fin-and-sichuan-pepper",
+    "author": "Fuchsia Dunlop, Bee Wilson",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30546509/2412775-L.jpg",
+    "dateRead": 0,
+    "dateAdded": 1753315200000
+  },
+  {
+    "title": "Mating in Captivity: Unlocking Erotic Intelligence",
+    "link": "https://hardcover.app/books/mating-in-captivity",
+    "author": "Esther Perel",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/external_data/60016467/d7d20d7a4636039ca6bdae142d6e29eb6489bda4.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1709942400000
+  },
+  {
+    "title": "The Hunger Games",
+    "link": "https://hardcover.app/books/the-hunger-games",
+    "author": "Suzanne Collins",
+    "rating": 2,
+    "coverUrl": "https://assets.hardcover.app/editions/1589497/2979196565308831-lf%202.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Homo Deus: A Brief History of Tomorrow",
+    "link": "https://hardcover.app/books/homo-deus",
+    "author": "Yuval Noah Harari",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30425557/3b67f74a7a1f38cdd9ce2941e2cc608229ff3492.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "The State of Affairs: Rethinking Infidelity",
+    "link": "https://hardcover.app/books/the-state-of-affairs-rethinking-infidelity",
+    "author": "Esther Perel",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/external_data/2686202/1a1d405c8d31d77ca6b31c64d5506cc04a9ddf0a.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1709942400000
+  },
+  {
+    "title": "Why We Sleep: Unlocking the Power of Sleep and Dreams",
+    "link": "https://hardcover.app/books/why-we-sleep",
+    "author": "Matthew Walker, Steve West",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/edition/30401325/007c4bf140918947a40c1b468da6e92321ebbde1.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1709942400000
+  },
+  {
+    "title": "The Order of Time",
+    "link": "https://hardcover.app/books/the-order-of-time",
+    "author": "Benedict Cumberbatch, Carlo Rovelli",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/editions/30402897/2340846043215666-45427805.jpg",
+    "dateRead": 1726876800000,
+    "dateAdded": 1724371200000
+  },
+  {
+    "title": "Psychopolitics: Neoliberalism and New Technologies of Power",
+    "link": "https://hardcover.app/books/psychopolitics",
+    "author": "Byung-Chul Han, Erik Butler",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/edition/9888625/030325db1707f614db94d1d0a37834a70e0c0d78.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1748736000000
+  },
+  {
+    "title": "21 Lessons for the 21st Century",
+    "link": "https://hardcover.app/books/21-lessons-for-the-21st-century",
+    "author": "Yuval Noah Harari",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30402213/94129fcb-4279-4978-8adf-ea3835b8aa9d.jpg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Atomic habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    "link": "https://hardcover.app/books/atomic-habits",
+    "author": "James Clear",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/12605395/629717fe-df46-40b8-8529-dca0323bf699.jpg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Exhalation",
+    "link": "https://hardcover.app/books/exhalation",
+    "author": "Ted Chiang",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/editions/26451239/0f1473e5-daee-434b-9194-c4dae3171647.jpeg",
+    "dateRead": 1725062400000,
+    "dateAdded": 1712620800000
+  },
+  {
+    "title": "Sum: Tales from the Afterlives",
+    "link": "https://hardcover.app/books/sum",
+    "author": "David Eagleman",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30405358/8b041bfda06204fa56c8d2305600d8ed2b5e8c3a.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1734307200000
+  },
+  {
+    "title": "Blindsight",
+    "link": "https://hardcover.app/books/blindsight",
+    "author": "Peter Watts",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/book_mappings/7333230/0c3d4d7893e47e39bcbde68fcb6c343a2be66a24.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1738368000000
+  },
+  {
+    "title": "Drive Your Plow Over the Bones of the Dead",
+    "link": "https://hardcover.app/books/drive-your-plow-over-the-bones-of-the-dead",
+    "author": "Antonia Lloyd-Jones, Olga Tokarczuk",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/16750173/ea5f08d3-00be-4485-af22-455018b3ab58.jpg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Project Hail Mary",
+    "link": "https://hardcover.app/books/project-hail-mary",
+    "author": "Andy Weir",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/editions/3274049/8741341047797682-91mYu67RfUL._SL1500_.jpg",
+    "dateRead": 1711238400000,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "The Expectation Effect",
+    "link": "https://hardcover.app/books/the-expectation-effect",
+    "author": "David   Robson",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30397385/13269893-L.jpg",
+    "dateRead": 0,
+    "dateAdded": 1724371200000
+  },
+  {
+    "title": "The Biggest Ideas in the Universe: Space, Time, and Motion",
+    "link": "https://hardcover.app/books/the-biggest-ideas-in-the-universe",
+    "author": "Sean Carroll",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/edition/30609336/dbe56eb7ccdfc40a8f06578d8c4d3f119da8de1b.jpeg",
+    "dateRead": 1709942400000,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Four Thousand Weeks: Time and How to Use It",
+    "link": "https://hardcover.app/books/four-thousand-weeks-time-and-how-to-use-it-2021",
+    "author": "Oliver Burkeman",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30455079/b336540f0267efbbd708b24934817f227d660666.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1783987200000
+  },
+  {
+    "title": "Atlas of the Heart: Mapping Meaningful Connection and the Language of Human Experience",
+    "link": "https://hardcover.app/books/atlas-of-the-heart",
+    "author": "Gavin Aung Than, Brené Brown",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/external_data/3002986/3d3975de8c01fbc80c6c2b180d71d89386677c47.jpeg",
+    "dateRead": 1709942400000,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Catching Fire",
+    "link": "https://hardcover.app/books/catching-fire",
+    "author": "Suzanne Collins",
+    "rating": 2,
+    "coverUrl": "https://assets.hardcover.app/edition/7988314/dbef0f7db3fc4a6157550d5f7cc01563af40315c.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Zen and the Art of Motorcycle Maintenance: An Inquiry into Values",
+    "link": "https://hardcover.app/books/zen-and-the-art-of-motorcycle-maintenance",
+    "author": "Robert M. Pirsig",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/external_data/31056341/398c09338379da8fce191bcd16df44fa70c646b0.jpeg",
+    "dateRead": 0,
+    "dateAdded": 1703203200000
+  },
+  {
+    "title": "Chaos: Making a New Science",
+    "link": "https://hardcover.app/books/chaos",
+    "author": "James Gleick",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/18562004/c739f626fe80b10636ac10a77159994abf4b8b85.jpeg",
+    "dateRead": 1741651200000,
+    "dateAdded": 1728518400000
+  },
+  {
+    "title": "The Maniac",
+    "link": "https://hardcover.app/books/the-maniac",
+    "author": "Benjamín Labatut",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/external_data/61460765/7c95659db3cdcc393048d2ec3cc1549bc7b0c701.jpeg",
+    "dateRead": 1749859200000,
+    "dateAdded": 1748131200000
+  },
+  {
+    "title": "The Teachings of Don Juan: A Yaqui Way of Knowledge",
+    "link": "https://hardcover.app/books/the-teachings-of-don-juan-a-yaqui-way-of-knowledge",
+    "author": "Carlos Castaneda",
+    "rating": 0,
+    "coverUrl": "https://assets.hardcover.app/edition/16075208/8341330-L.jpg",
+    "dateRead": 0,
+    "dateAdded": 1775174400000
+  },
+  {
+    "title": "Life, the Universe and Everything",
+    "link": "https://hardcover.app/books/life-the-universe-and-everything",
+    "author": "Douglas Adams",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/edition/30601721/312f39d2-5c8c-45a3-96de-89bb0c5f6471.jpg",
+    "dateRead": 0,
+    "dateAdded": 1770681600000
+  },
+  {
+    "title": "The Restaurant at the End of the Universe",
+    "link": "https://hardcover.app/books/the-restaurant-at-the-end-of-the-universe",
+    "author": "Douglas Adams",
+    "rating": 3,
+    "coverUrl": "https://assets.hardcover.app/edition/30391528/85b67e92-1dc0-40bb-be5d-4988afdfb511.jpg",
+    "dateRead": 0,
+    "dateAdded": 1769558400000
+  },
+  {
+    "title": "The Information: A History, a Theory, a Flood",
+    "link": "https://hardcover.app/books/the-information-a-history-a-theory-a-flood",
+    "author": "James Gleick",
+    "rating": 4,
+    "coverUrl": "https://assets.hardcover.app/edition/30704237/46fdac0db12687412956af65d35f3beab24bc48c.jpeg",
+    "dateRead": 1742169600000,
+    "dateAdded": 1714435200000
+  },
+  {
+    "title": "Of Mice and Men",
+    "link": "https://hardcover.app/books/of-mice-and-men",
+    "author": "John Steinbeck",
+    "rating": 0,
+    "coverUrl": "https://assets.hardcover.app/editions/30399637/208697025088793-Of_Mice_and_Men_(1937_1st_ed_dust_jacket).jpg",
+    "dateRead": 0,
+    "dateAdded": 1727395200000
+  },
+  {
+    "title": "The Biggest Ideas in the Universe 2: Quanta and Fields",
+    "link": "https://hardcover.app/books/the-biggest-ideas-in-the-universe-2",
+    "author": "Sean Carroll",
+    "rating": 5,
+    "coverUrl": "https://assets.hardcover.app/external_data/2925730/ec9b4e619c41caa0ab44865500b62234323091c0.jpeg",
+    "dateRead": 1723420800000,
+    "dateAdded": 1714521600000
   }
 ]
